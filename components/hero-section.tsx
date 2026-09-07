@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, MapPin, Ticket } from 'lucide-react';
+import { ArrowRight, MapPin, Ticket } from 'lucide-react';
 import { GOOGLE_FORM_REGISTRATION_URL, SYMPOSIUM_METADATA } from '@/lib/data/events';
 
 export default function HeroSection() {
@@ -63,17 +63,16 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs font-semibold text-slate-100 sm:gap-5 sm:text-sm"
+          className="mt-7 flex flex-col items-center text-center"
         >
-          <span className="inline-flex items-center gap-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-            <Calendar className="h-4 w-4 text-red-400" />
-            {SYMPOSIUM_METADATA.date}
-          </span>
+          <p className="text-3xl font-black tracking-tight text-white drop-shadow-[0_3px_16px_rgba(0,0,0,0.95)] sm:text-5xl md:text-6xl">
+            12th September 2026
+          </p>
           <a
             href={SYMPOSIUM_METADATA.venueMapUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-white underline decoration-red-400/70 underline-offset-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] hover:text-orange-300"
+            className="mt-2 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-slate-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] hover:text-orange-300 sm:text-base"
             title="Open AMS College of Engineering on Google Maps"
           >
             <MapPin className="h-4 w-4 text-orange-400" />

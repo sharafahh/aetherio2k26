@@ -60,7 +60,7 @@ export const SYMPOSIUM_METADATA = {
   presenter: "AMSphere",
   tagline: "Convergence of Intelligence, Technology & Innovation",
   institution: "AMS COLLEGE OF ENGINEERING",
-  date: "Sept 12, 2026",
+  date: "12th September 2026",
   venue: "AMS COLLEGE OF ENGINEERING",
   venueMapUrl: "https://maps.app.goo.gl/KXEwRv9tYrupnzii9?g_st=aw",
   registrationUrl: GOOGLE_FORM_REGISTRATION_URL,
