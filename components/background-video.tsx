@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { assetPath } from '@/lib/asset-path';
 
 /**
  * Mobile-Only Fixed Background Video Component (max-width: 768px / md:hidden)
@@ -20,7 +21,7 @@ export function MobileHeroVideo() {
             v.play().catch(() => {});
           }
         }}
-        src="/mobile-bg.mp4"
+        src={assetPath('/mobile-bg.mp4')}
         className="w-full h-full object-cover object-center opacity-100 pointer-events-none z-0"
         autoPlay
         loop
@@ -40,7 +41,7 @@ export function DesktopBackgroundVideo() {
     <div className="hidden md:block fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#060203]">
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-[#060203]/90 z-10" />
       <video
-        src="/hero-dragon-2.mp4"
+        src={assetPath('/hero-dragon-2.mp4')}
         className="w-full h-full object-cover object-center opacity-90 transition-all duration-300"
         autoPlay
         loop
