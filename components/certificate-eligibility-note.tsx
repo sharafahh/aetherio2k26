@@ -1,8 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Award, CheckCircle2, XCircle } from 'lucide-react';
-import FemaleOfferBanner from '@/components/female-offer-banner';
+import { Award, CheckCircle2, Info } from 'lucide-react';
 
 export default function CertificateEligibilityNote({ className = '' }: { className?: string }) {
   return (
@@ -15,47 +14,83 @@ export default function CertificateEligibilityNote({ className = '' }: { classNa
           <h4 className="text-xs font-mono uppercase tracking-widest text-red-400 font-bold">
             📌 NOTE – Certificate Eligibility
           </h4>
-          <p className="text-[11px] text-slate-400">Official Certification Policy for AETHERION'26</p>
+          <p className="text-[11px] text-slate-400">Official Certificate Policy for AETHERION'26</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-        {/* Tech Only */}
-        <div className="p-3 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex flex-col justify-between space-y-2">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        {/* Technical Participants */}
+        <div className="p-3.5 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex flex-col justify-between space-y-2.5">
           <div className="flex items-center justify-between">
-            <span className="font-bold text-white">💻 Technical Event Only</span>
+            <span className="font-bold text-white text-xs sm:text-sm">Technical Participants</span>
             <CheckCircle2 className="w-4 h-4 text-emerald-400" />
           </div>
           <span className="inline-block text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-semibold w-fit">
             Certificate Provided
           </span>
+          <p className="text-[11px] text-slate-300 leading-relaxed">
+            Participants who register for and participate in at least one technical event will receive an Official Certificate of Participation.
+          </p>
         </div>
 
-        {/* Non Tech Only */}
-        <div className="p-3 rounded-xl bg-amber-950/20 border border-amber-500/30 flex flex-col justify-between space-y-2">
+        {/* Combined Participants */}
+        <div className="p-3.5 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex flex-col justify-between space-y-2.5">
           <div className="flex items-center justify-between">
-            <span className="font-bold text-white">🎯 Non-Technical Event Only</span>
-            <XCircle className="w-4 h-4 text-amber-400" />
-          </div>
-          <span className="inline-block text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-semibold w-fit">
-            No Certificate Provided
-          </span>
-        </div>
-
-        {/* Both Tech + Non Tech */}
-        <div className="p-3 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex flex-col justify-between space-y-2">
-          <div className="flex items-center justify-between">
-            <span className="font-bold text-white">🏆 Technical + Non-Tech</span>
+            <span className="font-bold text-white text-xs sm:text-sm">Technical + Non-Technical Participants</span>
             <CheckCircle2 className="w-4 h-4 text-emerald-400" />
           </div>
           <span className="inline-block text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-semibold w-fit">
             Certificate Provided
           </span>
+          <p className="text-[11px] text-slate-300 leading-relaxed">
+            Participants who participate in both technical and non-technical events will receive an Official Certificate of Participation.
+          </p>
+        </div>
+
+        {/* Non-Technical Only Participants */}
+        <div className="p-3.5 rounded-xl bg-orange-950/20 border border-orange-500/30 flex flex-col justify-between space-y-2.5">
+          <div className="flex items-center justify-between">
+            <span className="font-bold text-white text-xs sm:text-sm">Non-Technical Only Participants</span>
+            <Info className="w-4 h-4 text-orange-400" />
+          </div>
+          <span className="inline-block text-[10px] font-mono px-2 py-0.5 rounded-full bg-orange-500/20 text-orange-300 font-semibold w-fit">
+            No Certificate
+          </span>
+          <p className="text-[11px] text-slate-300 leading-relaxed">
+            Participants who participate only in non-technical events will not be eligible for an Official Certificate of Participation.
+          </p>
         </div>
       </div>
 
-      {/* Female Participant Special Offer */}
-      <FemaleOfferBanner />
+      {/* Special Note */}
+      <div className="border-t border-red-500/20 pt-4">
+        <h4 className="text-xs font-mono uppercase tracking-widest text-red-400 font-bold mb-3">
+          📌 SPECIAL NOTE
+        </h4>
+        <div className="p-4 sm:p-5 rounded-xl bg-gradient-to-r from-pink-950/40 via-purple-950/30 to-red-950/40 border border-pink-500/40 shadow-[0_0_25px_rgba(236,72,153,0.15)] relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/10 rounded-full blur-2xl pointer-events-none" />
+
+          <div className="flex items-start gap-3 relative z-10">
+            <div className="w-10 h-10 rounded-xl bg-pink-500/20 border border-pink-500/40 flex items-center justify-center text-pink-300 flex-shrink-0 text-lg shadow-inner">
+              💮
+            </div>
+            <div className="space-y-1.5 flex-1">
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <h4 className="text-xs sm:text-sm font-extrabold text-pink-300 uppercase font-mono tracking-wider">
+                  Mehndi for Women Participants
+                </h4>
+                <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-pink-500/20 text-pink-200 border border-pink-500/40">
+                  FIRST 25 ONLY
+                </span>
+              </div>
+
+              <p className="text-xs text-slate-200 font-medium leading-relaxed">
+                Mehndi will be available exclusively for women participants. This benefit is limited to the FIRST 25 women participants on a first-come, first-served basis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
