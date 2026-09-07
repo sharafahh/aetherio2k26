@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import CertificateModalPopup from '@/components/certificate-modal-popup';
-import FemaleOfferFloatingWidget from '@/components/female-offer-widget';
 
 export const metadata: Metadata = {
   title: "AMSphere Presents AETHERION'26 | Convergence of Intelligence, Technology & Innovation",
@@ -37,7 +36,6 @@ export default function RootLayout({
         <Providers>
           {children}
           <CertificateModalPopup />
-          <FemaleOfferFloatingWidget />
         </Providers>
       </body>
     </html>
