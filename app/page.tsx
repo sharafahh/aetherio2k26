@@ -57,7 +57,7 @@ export default function HomePage() {
             </p>
 
             <p className="text-slate-200 text-xs sm:text-sm leading-relaxed">
-              Guided by the spirit of the dragon — <strong className="text-white font-mono">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</strong> — the symposium offers high-stakes technical tracks, non-technical arenas, and e-sports under a single <strong className="text-red-300">₹150 pass (covers All Events)</strong>.
+              Guided by the spirit of the dragon — <strong className="text-white font-mono">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</strong> — the symposium offers high-stakes technical tracks, non-technical arenas, and e-sports under one pass: <strong className="text-red-300">₹150 for one person, ₹300 for a team of 2–3</strong>.
             </p>
           </div>
 
