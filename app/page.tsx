@@ -40,38 +40,35 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 2. ABOUT AETHERION'26 SECTION & METRICS */}
       {/* ========================================================================= */}
-      <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-red-500/10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-mono text-red-300">
-              <Layers className="w-3.5 h-3.5" />
-              <span>THE VISION OF AETHERION</span>
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
-              A national battleground for <span className="text-gradient">engineers &amp; creators</span>
-            </h2>
-
-            <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
-              Proudly presented by <strong className="text-red-300">AMSphere</strong>, <strong>AETHERION&apos;26</strong> is a national-scale flagship symposium crafted as a premier battleground for ambitious engineers, digital creators, competitive coders, gamers, and athletic minds.
-            </p>
-
-            <p className="text-slate-200 text-xs sm:text-sm leading-relaxed">
-              Guided by the spirit of the dragon — <strong className="text-white font-mono">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</strong> — the symposium offers high-stakes technical tracks, non-technical arenas, and e-sports under a single <strong className="text-red-300">₹150 pass (covers All Events)</strong>.
-            </p>
+      <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-red-500/10">
+        <div className="flex flex-col items-center text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-mono text-[#ff1a00]">
+            <Layers className="w-3.5 h-3.5" />
+            <span>THE VISION OF AETHERION</span>
           </div>
 
-          {/* Metric Counter Panels */}
-          <div className="lg:col-span-6 grid grid-cols-2 gap-4">
+          <h2 className="mt-5 max-w-3xl text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+            A national battleground for <span className="text-fire-red">engineers &amp; creators</span>
+          </h2>
+
+          <p className="mt-5 max-w-[820px] text-slate-200 text-sm sm:text-base leading-relaxed">
+            Proudly presented by <strong className="text-fire-red">AMSphere</strong>, <strong className="text-white">AETHERION&apos;26</strong> is a national-scale flagship symposium crafted as a premier battleground for ambitious engineers, digital creators, competitive coders, gamers, and athletic minds.
+          </p>
+
+          <p className="mt-3 max-w-[820px] text-slate-200 text-xs sm:text-sm leading-relaxed">
+            Guided by the spirit of the dragon — <strong className="text-fire-red font-mono">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</strong> — the symposium offers high-stakes technical tracks, non-technical arenas, and e-sports under a single <strong className="text-fire-red">₹150 pass (covers All Events)</strong>.
+          </p>
+
+          <div className="mt-10 grid w-full grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
             {SYMPOSIUM_METADATA.stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-surface border border-border hover:border-red-500/40 hover:shadow-[0_0_25px_rgba(230,0,26,0.2)] transition-all flex flex-col justify-between group"
+                className="p-5 sm:p-6 rounded-2xl bg-surface border border-border hover:border-red-500/40 hover:shadow-[0_0_25px_rgba(230,0,26,0.2)] transition-all flex flex-col items-center justify-between group"
               >
-                <span className="text-3xl sm:text-4xl font-black font-mono text-white group-hover:text-red-400 transition-colors">
+                <span className="text-3xl sm:text-4xl font-black font-mono text-white group-hover:text-[#ff1a00] transition-colors">
                   {stat.value}
                 </span>
-                <span className="text-xs text-slate-200 font-mono mt-3 leading-snug">
+                <span className="text-[11px] sm:text-xs text-slate-200 font-mono mt-3 leading-snug">
                   {stat.label}
                 </span>
               </div>
