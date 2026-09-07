@@ -8,7 +8,6 @@ import ScheduleSection from '@/components/schedule-section';
 
 import RulesSection from '@/components/rules-section';
 import CertificateEligibilityNote from "@/components/certificate-eligibility-note";
-import FemaleOfferBanner from "@/components/female-offer-banner";
 import FAQSection from '@/components/faq-section';
 import ContactSection from '@/components/contact-section';
 import CustomCursor from '@/components/custom-cursor';
