@@ -7,7 +7,6 @@ import EventExplorer from '@/components/event-explorer';
 import ScheduleSection from '@/components/schedule-section';
 
 import RulesSection from '@/components/rules-section';
-import CertificateEligibilityNote from "@/components/certificate-eligibility-note";
 import FAQSection from '@/components/faq-section';
 import ContactSection from '@/components/contact-section';
 import CustomCursor from '@/components/custom-cursor';
@@ -157,11 +156,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Certificate Eligibility Note Banner */}
-        <div className="mt-12">
-          <CertificateEligibilityNote />
         </div>
       </section>
 

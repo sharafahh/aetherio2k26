@@ -597,15 +597,6 @@ export const TIMELINE_SCHEDULE = [
 ];
 export const RULES_SECTIONS = [
   {
-    id: 'certificate-rules',
-    title: '📌 NOTE – Certificate Eligibility',
-    rules: [
-      '💻 Technical Event Only: Official Certificate of Participation will be provided.',
-      '🎯 Non-Technical Event Only: No certificate will be provided.',
-      '🏆 Both Technical + Non-Technical Events: Official Certificate of Participation will be provided.',
-    ]
-  },
-  {
     id: 'general-rules',
     title: 'General Symposium Guidelines',
     rules: [
