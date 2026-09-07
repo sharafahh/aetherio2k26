@@ -1,6 +1,3 @@
-import { only } from "node:test";
-import { add, or } from "three/src/nodes/math/OperatorNode.js";
-
 export interface Coordinator {
   name: string;
   year: '4th Year' | '2nd Year' | '3rd Year' | 'Faculty' | 'Staff';
@@ -70,8 +67,10 @@ export const SYMPOSIUM_METADATA = {
   email: "contact@aetherion26.org",
   pricingOffer: "₹150 Flat Fee (For All Events)",
   stats: [
-    { label: "Technical & Non-Tech Events", value: "8+", prefix: "" },
-    { label: "Pass Fee (All Events)", value: "₹150", prefix: "" },
+    { label: "Technical Events", value: "4", prefix: "" },
+    { label: "Non-Technical Events", value: "5", prefix: "" },
+    { label: "E-Sports Events", value: "2", prefix: "" },
+    { label: "All-Event Pass", value: "₹150", prefix: "" },
   ]
 };
 export const EVENTS_DATA: EventItem[] = [
@@ -123,7 +122,7 @@ export const EVENTS_DATA: EventItem[] = [
     id: 'black-box',
     slug: 'black-box',
     title: 'AI ESCAPE ROOM',
-    category: 'technical',
+    category: 'non-technical',
     tagline: 'Team-based AI puzzle-solving experience',
     shortDesc: 'Solve AI-based puzzles, clues, and challenges to escape before the allotted time expires.',
     fullDesc: 'AI Escape Room is a thrilling team-based AI puzzle-solving experience. Work together to solve AI-based puzzles, clues, and challenges to escape. Complete the challenge before the allotted time expires.',
