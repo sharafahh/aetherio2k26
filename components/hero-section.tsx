@@ -17,7 +17,7 @@ export default function HeroSection() {
           transition={{ duration: 0.5 }}
           className="mb-4 text-base font-black uppercase tracking-[0.28em] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)] sm:text-xl md:text-2xl"
         >
-          <span className="text-gradient-ember">AMSphere</span>
+          <span className="text-fire-red">AMSphere</span>
           <span className="text-white"> Presents:</span>
         </motion.p>
 
@@ -28,7 +28,7 @@ export default function HeroSection() {
           className="font-mono text-5xl font-black uppercase tracking-[0.12em] text-white drop-shadow-[0_4px_28px_rgba(0,0,0,0.95),0_0_35px_rgba(230,0,26,0.45)] sm:text-7xl md:text-8xl"
         >
           AETHERION
-          <span className="bg-gradient-to-r from-red-400 via-orange-400 to-red-500 bg-clip-text font-sans text-3xl tracking-normal text-transparent drop-shadow-none sm:text-5xl md:text-6xl">
+          <span className="text-fire-red font-sans text-3xl tracking-normal sm:text-5xl md:text-6xl">
             &apos;26
           </span>
         </motion.h1>
@@ -41,7 +41,7 @@ export default function HeroSection() {
         >
           Where Power Meets
           <br />
-          <span className="bg-gradient-to-r from-red-400 via-orange-400 to-red-500 bg-clip-text text-transparent">
+          <span className="text-fire-red">
             Limitless Intelligence
           </span>
         </motion.h2>
@@ -52,11 +52,11 @@ export default function HeroSection() {
           transition={{ duration: 0.55, delay: 0.24 }}
           className="mt-6 max-w-[820px] text-sm leading-relaxed text-slate-100 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] sm:text-base md:text-lg"
         >
-          Proudly presented by <strong className="text-white">AMSphere</strong>,{' '}
-          <strong className="text-white">AETHERION&apos;26</strong> is a national-scale flagship symposium
+          Proudly presented by <strong className="text-fire-red">AMSphere</strong>,{' '}
+          <strong className="text-fire-red">AETHERION&apos;26</strong> is a national-scale flagship symposium
           for engineers, creators, competitive coders, and gamers. One pass covers every arena — technical
           tracks, non-technical challenges, and e-sports — guided by{' '}
-          <span className="font-semibold text-orange-300">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</span>.
+          <span className="font-semibold text-fire-red">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</span>.
         </motion.p>
 
         <motion.div
@@ -72,10 +72,10 @@ export default function HeroSection() {
             href={SYMPOSIUM_METADATA.venueMapUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-slate-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] hover:text-orange-300 sm:text-base"
+            className="mt-2 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-slate-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] hover:text-[#ff1a00] sm:text-base"
             title="Open AMS College of Engineering on Google Maps"
           >
-            <MapPin className="h-4 w-4 text-orange-400" />
+            <MapPin className="h-4 w-4 text-[#ff1a00]" />
             {SYMPOSIUM_METADATA.venue}
           </a>
         </motion.div>
@@ -89,14 +89,14 @@ export default function HeroSection() {
           <div className="relative overflow-hidden rounded-2xl bg-[#0a0305]/80 px-8 py-6 backdrop-blur-xl">
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-red-500/10 via-transparent to-orange-500/10" />
             <div className="relative flex flex-col items-center">
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-orange-200">
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-[#ff2a00]">
                 <Ticket className="h-3.5 w-3.5" />
                 Entry Pass
               </span>
               <span className="mt-2 text-5xl font-black tracking-tight text-white drop-shadow-[0_0_22px_rgba(230,0,26,0.55)]">
                 ₹150
               </span>
-              <span className="mt-2 text-[11px] font-bold uppercase tracking-[0.18em] text-red-200">
+              <span className="mt-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#ff1a00]">
                 Technical Events
               </span>
               <span className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-slate-200">

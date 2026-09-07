@@ -72,21 +72,29 @@
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #ffffff 15%, #ff2a3d 60%, #e6001a 100%);
+  background: linear-gradient(135deg, #ff4d2a 10%, #ff1a00 48%, #c40012 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-crimson {
-  background: linear-gradient(135deg, #ff4d5a 0%, #e6001a 50%, #990012 100%);
+  background: linear-gradient(135deg, #ff2a1a 0%, #e6001a 50%, #990000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-ember {
-  background: linear-gradient(135deg, #fb923c 0%, #ef4444 60%, #b91c1c 100%);
+  background: linear-gradient(135deg, #ff3b1f 0%, #ff1400 45%, #c40000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-fire-red {
+  background: linear-gradient(90deg, #ff2a00 0%, #ff1a00 40%, #e60000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(255, 26, 0, 0.45));
 }
 
 .bg-grid-pattern {
