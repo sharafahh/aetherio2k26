@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { EventItem, EVENTS_DATA } from '@/lib/data/events';
 import EventModal from './event-modal';
 import {
-  Search,
   Cpu,
   Terminal,
   Presentation,
@@ -174,32 +173,11 @@ function EventSection({
 }
 
 export default function EventExplorer() {
-  const [selectedCategory, setSelectedCategory] = useState<'all' | 'technical' | 'non-technical' | 'e-sports'>('all');
-  const [searchQuery, setSearchQuery] = useState('');
   const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
 
-  const filteredEvents = useMemo(() => {
-    return EVENTS_DATA.filter((event) => {
-      let matchesCat = true;
-      if (selectedCategory === 'technical') matchesCat = event.category === 'technical';
-      if (selectedCategory === 'non-technical') matchesCat = event.category === 'non-technical';
-      if (selectedCategory === 'e-sports') matchesCat = event.category === 'e-sports';
-
-      const q = searchQuery.toLowerCase().trim();
-      if (!q) return matchesCat;
-
-      const titleMatch = event.title.toLowerCase().includes(q);
-      const descMatch = event.shortDesc.toLowerCase().includes(q) || event.tagline.toLowerCase().includes(q);
-      const coordMatch = event.coordinators.some((c) => c.name.toLowerCase().includes(q));
-      const subMatch = event.subEvents?.some((s) => s.name.toLowerCase().includes(q));
-
-      return matchesCat && (titleMatch || descMatch || coordMatch || subMatch);
-    });
-  }, [selectedCategory, searchQuery]);
-
-  const technicalEvents = filteredEvents.filter((e) => e.category === 'technical');
-  const nonTechnicalEvents = filteredEvents.filter((e) => e.category === 'non-technical');
-  const esportsEvents = filteredEvents.filter((e) => e.category === 'e-sports');
+  const technicalEvents = EVENTS_DATA.filter((e) => e.category === 'technical');
+  const nonTechnicalEvents = EVENTS_DATA.filter((e) => e.category === 'non-technical');
+  const esportsEvents = EVENTS_DATA.filter((e) => e.category === 'e-sports');
 
   return (
     <div id="events" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -219,86 +197,29 @@ export default function EventExplorer() {
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
-        <div className="flex items-center p-1 rounded-xl bg-surface border border-border shadow-inner w-full md:w-auto overflow-x-auto">
-          {[
-            { id: 'all', label: 'All Tracks' },
-            { id: 'technical', label: 'Technical' },
-            { id: 'non-technical', label: 'Non-Technical' },
-            { id: 'e-sports', label: 'E-Sports' },
-          ].map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setSelectedCategory(cat.id as typeof selectedCategory)}
-              className={`px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap ${
-                selectedCategory === cat.id
-                  ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white shadow-[0_0_15px_rgba(230,0,26,0.4)]'
-                  : 'text-slate-200 hover:text-white'
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
-        <div className="relative w-full md:w-72">
-          <Search className="w-4 h-4 text-slate-300 absolute left-3.5 top-1/2 -translate-y-1/2" />
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search events, topics, coordinators..."
-            className="w-full pl-10 pr-4 py-2.5 bg-surface border border-border rounded-xl text-xs text-white placeholder-slate-400 focus:outline-none focus:border-red-500/60 focus:ring-1 focus:ring-red-500/40 transition-all"
-          />
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-300 hover:text-white"
-            >
-              Clear
-            </button>
-          )}
-        </div>
+      <div className="space-y-16">
+        <EventSection
+          title="Technical Events"
+          countLabel={`${technicalEvents.length} events`}
+          events={technicalEvents}
+          gridClass="grid grid-cols-1 md:grid-cols-2 gap-6"
+          onOpen={setSelectedEvent}
+        />
+        <EventSection
+          title="Non-Technical Events"
+          countLabel={`${nonTechnicalEvents.length} events`}
+          events={nonTechnicalEvents}
+          gridClass="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          onOpen={setSelectedEvent}
+        />
+        <EventSection
+          title="E-Sports"
+          countLabel={`${esportsEvents.length} events`}
+          events={esportsEvents}
+          gridClass="grid grid-cols-1 md:grid-cols-2 gap-6 md:max-w-4xl"
+          onOpen={setSelectedEvent}
+        />
       </div>
-
-      {filteredEvents.length > 0 ? (
-        <div className="space-y-16">
-          <EventSection
-            title="Technical Events"
-            countLabel={`${technicalEvents.length} events`}
-            events={technicalEvents}
-            gridClass="grid grid-cols-1 md:grid-cols-2 gap-6"
-            onOpen={setSelectedEvent}
-          />
-          <EventSection
-            title="Non-Technical Events"
-            countLabel={`${nonTechnicalEvents.length} events`}
-            events={nonTechnicalEvents}
-            gridClass="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            onOpen={setSelectedEvent}
-          />
-          <EventSection
-            title="E-Sports"
-            countLabel={`${esportsEvents.length} events`}
-            events={esportsEvents}
-            gridClass="grid grid-cols-1 md:grid-cols-2 gap-6 md:max-w-4xl"
-            onOpen={setSelectedEvent}
-          />
-        </div>
-      ) : (
-        <div className="text-center py-16 bg-surface border border-border rounded-2xl max-w-md mx-auto">
-          <p className="text-slate-200 text-sm">No events found matching your search query.</p>
-          <button
-            onClick={() => {
-              setSelectedCategory('all');
-              setSearchQuery('');
-            }}
-            className="mt-4 text-xs font-mono text-red-300 hover:underline"
-          >
-            Reset Filters
-          </button>
-        </div>
-      )}
 
       <EventModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
     </div>
