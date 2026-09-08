@@ -530,7 +530,6 @@ export default function RegistrationForm() {
                 <option value="2">2nd Year</option>
                 <option value="3">3rd Year</option>
                 <option value="4">4th Year</option>
-                <option value="PG">Postgraduate</option>
               </select>
             </div>
           </div>

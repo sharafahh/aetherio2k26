@@ -59,9 +59,9 @@ export const SYMPOSIUM_METADATA = {
   name: "AETHERION'26",
   presenter: "AMSphere",
   tagline: "Convergence of Intelligence, Technology & Innovation",
-  institution: "AMS COLLEGE OF ENGINEERING",
+  institution: "Aalim Muhammed Salegh College of Engineering",
   date: "12th September 2026",
-  venue: "AMS COLLEGE OF ENGINEERING",
+  venue: "Aalim Muhammed Salegh College of Engineering",
   venueMapUrl: "https://maps.app.goo.gl/KXEwRv9tYrupnzii9?g_st=aw",
   registrationUrl: GOOGLE_FORM_REGISTRATION_URL,
   email: "contact@aetherion26.org",
@@ -646,7 +646,7 @@ export const RULES_SECTIONS = [
 export const FAQ_DATA = [
   {
     question: "Who is eligible to participate in AETHERION'26?",
-    answer: "Students currently enrolled in undergraduate or postgraduate engineering, technology, science, and arts programs across recognized colleges and universities with a valid student ID are welcome to participate."
+    answer: "Only undergraduate (UG) students with a valid college ID are eligible to participate. Postgraduate (PG) students are not eligible."
   },
   {
     question: "What is the symposium registration fee and how many events can I participate in?",
@@ -666,10 +666,10 @@ export const FAQ_DATA = [
   },
   {
     question: "Will all participants receive certificates?",
-    answer: "Yes! All verified attendees will receive official AETHERION'26 Certificates of Participation, and winners will be awarded cash prizes, prestigious trophies, and Certificates of Excellence."
+    answer: "Certificate eligibility follows the official note:\n\nTechnical Event Only — Certificate Provided. Official Certificate of Participation will be provided.\n\nNon-Technical Event Only — No Certificate. No certificate will be provided for non-technical events only.\n\nBoth Technical + Non-Technical — Certificate Provided. Official Certificate of Participation will be provided.\n\nNo trophies will be provided. Winners will receive a certificate and cash awards. Participants will receive a participation certificate."
   },
   {
     question: "Where will AETHERION'26 be held and is transportation/food provided?",
-    answer: "AETHERION'26 is held at [COLLEGE / INSTITUTION NAME] main campus. Refreshments and lunch are provided for all registered participants. Detailed directions and campus map links are available in our Contact section."
+    answer: "AETHERION'26 will be held at Aalim Muhammed Salegh College of Engineering. Refreshments and lunch are provided for all registered participants. Detailed directions and campus map links are available in our Contact section."
   }
 ];
