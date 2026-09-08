@@ -8,46 +8,33 @@ import { GOOGLE_FORM_REGISTRATION_URL, SYMPOSIUM_METADATA } from '@/lib/data/eve
 export default function HeroSection() {
   return (
     <section className="relative z-20 flex min-h-[100svh] w-full items-center justify-center overflow-hidden px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8">
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center text-center">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-4 text-base font-black uppercase tracking-[0.28em] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)] sm:text-xl md:text-2xl"
+          className="mb-3 text-lg font-black uppercase tracking-[0.32em] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)] sm:text-2xl md:text-3xl"
         >
           <span className="text-fire-red">AMSphere</span>
-          <span className="text-white"> Presents:</span>
+          <span className="text-white"> Presents</span>
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.08 }}
-          className="font-mono text-5xl font-black uppercase tracking-[0.12em] text-white drop-shadow-[0_4px_28px_rgba(0,0,0,0.95),0_0_35px_rgba(230,0,26,0.45)] sm:text-7xl md:text-8xl"
+          className="font-sans text-6xl font-black uppercase tracking-[0.08em] text-white drop-shadow-[0_6px_32px_rgba(0,0,0,0.95),0_0_48px_rgba(230,0,26,0.65)] sm:text-8xl md:text-[9rem] md:leading-[0.9]"
         >
           AETHERION
-          <span className="text-fire-red font-sans text-3xl tracking-normal sm:text-5xl md:text-6xl">
+          <span className="text-fire-red font-sans text-4xl tracking-normal sm:text-6xl md:text-7xl">
             &apos;26
           </span>
         </motion.h1>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.16 }}
-          className="mt-5 max-w-3xl text-2xl font-black leading-tight tracking-tight text-white drop-shadow-[0_3px_16px_rgba(0,0,0,0.95)] sm:text-4xl md:text-5xl"
-        >
-          Where Power Meets
-          <br />
-          <span className="text-fire-red">
-            Limitless Intelligence
-          </span>
-        </motion.h2>
-
         <motion.p
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.24 }}
+          transition={{ duration: 0.55, delay: 0.2 }}
           className="mt-6 max-w-[820px] text-sm leading-relaxed text-slate-100 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] sm:text-base md:text-lg"
         >
           Proudly presented by <strong className="text-fire-red">AMSphere</strong>,{' '}
@@ -60,10 +47,10 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-7 flex flex-col items-center text-center"
+          transition={{ duration: 0.5, delay: 0.26 }}
+          className="mt-6 flex flex-col items-center text-center"
         >
-          <p className="text-3xl font-black tracking-tight text-white drop-shadow-[0_3px_16px_rgba(0,0,0,0.95)] sm:text-5xl md:text-6xl">
+          <p className="text-2xl font-black tracking-tight text-white drop-shadow-[0_3px_16px_rgba(0,0,0,0.95)] sm:text-3xl md:text-4xl">
             12th September 2026
           </p>
           <a
@@ -81,30 +68,30 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.36 }}
-          className="entry-pass-card group relative mx-auto mt-8 w-full max-w-[420px] cursor-default rounded-2xl p-[1px] transition-transform duration-300 hover:scale-[1.03]"
+          transition={{ duration: 0.5, delay: 0.32 }}
+          className="entry-pass-card group relative mx-auto mt-6 w-full max-w-[260px] cursor-default rounded-xl p-[1px] transition-transform duration-300 hover:scale-[1.03]"
         >
-          <div className="relative overflow-hidden rounded-2xl bg-[#0a0305]/80 px-5 py-6 sm:px-6 backdrop-blur-xl">
+          <div className="relative overflow-hidden rounded-xl bg-[#0a0305]/80 px-3 py-3 sm:px-4 backdrop-blur-xl">
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-red-500/10 via-transparent to-orange-500/10" />
             <div className="relative flex flex-col items-center">
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-[#ff2a00]">
-                <Ticket className="h-3.5 w-3.5" />
+              <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.2em] text-[#ff2a00]">
+                <Ticket className="h-3 w-3" />
                 Entry Pass
               </span>
-              <div className="mt-4 grid w-full grid-cols-2 divide-x divide-red-500/30">
-                <div className="flex flex-col items-center px-3">
-                  <span className="text-4xl font-black tracking-tight text-white drop-shadow-[0_0_22px_rgba(230,0,26,0.55)] sm:text-5xl">
+              <div className="mt-2 grid w-full grid-cols-2 divide-x divide-red-500/30">
+                <div className="flex flex-col items-center px-2">
+                  <span className="text-xl font-black tracking-tight text-white drop-shadow-[0_0_16px_rgba(230,0,26,0.55)] sm:text-2xl">
                     ₹150
                   </span>
-                  <span className="mt-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#ff1a00]">
+                  <span className="mt-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-[#ff1a00]">
                     Per Person
                   </span>
                 </div>
-                <div className="flex flex-col items-center px-3">
-                  <span className="text-4xl font-black tracking-tight text-white drop-shadow-[0_0_22px_rgba(230,0,26,0.55)] sm:text-5xl">
+                <div className="flex flex-col items-center px-2">
+                  <span className="text-xl font-black tracking-tight text-white drop-shadow-[0_0_16px_rgba(230,0,26,0.55)] sm:text-2xl">
                     ₹300
                   </span>
-                  <span className="mt-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#ff1a00]">
+                  <span className="mt-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-[#ff1a00]">
                     Team of 2–3
                   </span>
                 </div>
@@ -116,8 +103,8 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.44 }}
-          className="mt-8 flex w-full max-w-xl flex-col items-center justify-center gap-3 sm:flex-row"
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-6 flex w-full max-w-xl flex-col items-center justify-center gap-3 sm:flex-row"
         >
           <a
             href={GOOGLE_FORM_REGISTRATION_URL}
