@@ -284,7 +284,7 @@ export default function EventExplorer() {
           Explore All <span className="text-gradient">AETHERION Events</span>
         </h2>
         <p className="text-slate-200 text-sm sm:text-base mt-3 leading-relaxed">
-          Five technical arenas, four non-technical challenges, and two esports titles. Check each game’s squad size before you lock in.
+          Five technical events, four non-technical events, and two esports events.
         </p>
         <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
           Pick a track, then flip a card for time and team size

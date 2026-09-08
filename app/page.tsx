@@ -47,15 +47,11 @@ export default function HomePage() {
           </div>
 
           <h2 className="mt-5 max-w-3xl text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
-            Eleven arenas. One campus. <span className="text-fire-red">Zero spectators.</span>
+            AETHERION&apos;26 Symposium
           </h2>
 
           <p className="mt-5 max-w-[820px] text-slate-200 text-sm sm:text-base leading-relaxed">
-            <strong className="text-white">AETHERION&apos;26</strong> by <strong className="text-fire-red">AMSphere</strong> is the flagship day for engineers, digital creators, competitive coders, and gamers who want a real arena — not another lecture hall.
-          </p>
-
-          <p className="mt-3 max-w-[820px] text-slate-200 text-xs sm:text-sm leading-relaxed">
-            High-stakes technical tracks, non-technical arenas, and e-sports — built as a one-day national battleground, not a campus fair.
+            We are excited to welcome you to the symposium, with cash awards for the winners.
           </p>
 
           <div className="mt-10 grid w-full grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
@@ -115,7 +111,7 @@ export default function HomePage() {
               AETHERION<span className="text-red-500 font-mono text-sm">&apos;26</span>
             </span>
             <p className="text-xs text-slate-500 max-w-sm">
-              [OFFICIAL TAGLINE — ADD WHEN PROVIDED]
+              We are excited to welcome you to the symposium, with cash awards for the winners.
             </p>
             <p className="text-[11px] text-slate-400 font-mono">
               Presented by AMSphere

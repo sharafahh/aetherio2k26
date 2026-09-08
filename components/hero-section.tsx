@@ -21,15 +21,8 @@ export default function HeroSection() {
             </span>
           </h1>
 
-          <h2 className="relative mt-5 max-w-3xl text-2xl font-black leading-[1.15] tracking-tight text-white sm:text-4xl md:text-[2.75rem]">
-            National arena for
-            <br />
-            <span className="text-fire-red">code, creation &amp; combat</span>
-          </h2>
-
-          <p className="relative mx-auto mt-5 max-w-[34rem] text-sm leading-relaxed text-slate-200 sm:text-base">
-            One-day national symposium. Eleven live arenas spanning AI, engineering, design, and e-sports.
-            Show up ready to ship, stage, or dominate the bracket.
+          <p className="relative mx-auto mt-6 max-w-[34rem] text-sm leading-relaxed text-slate-200 sm:text-base">
+            We are excited to welcome you to the symposium, with cash awards for the winners.
           </p>
         </div>
 
