@@ -30,7 +30,7 @@ import {
   Tag,
   Flame
 } from 'lucide-react';
-import { EVENTS_DATA, OFFICIAL_PAYMENT_INFO, SYMPOSIUM_METADATA } from '@/lib/data/events';
+import { EVENTS_DATA, OFFICIAL_PAYMENT_INFO, INDIVIDUAL_REGISTRATION_FEE, TEAM_2_TO_3_REGISTRATION_FEE, SYMPOSIUM_METADATA } from '@/lib/data/events';
 import CertificateEligibilityNote from '@/components/certificate-eligibility-note';
 import Link from 'next/link';
 
@@ -49,7 +49,6 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>;
 
-const FLAT_REGISTRATION_FEE = 150;
 const MAX_SELECTABLE_EVENTS = 99;
 
 export default function RegistrationForm() {
@@ -66,13 +65,17 @@ export default function RegistrationForm() {
   const [submitting, setSubmitting] = useState(false);
   const [formError, setFormError] = useState('');
   const [receiptData, setReceiptData] = useState<any>(null);
+  const [registrationType, setRegistrationType] = useState<'individual' | 'team'>('individual');
+
+  const registrationFee =
+    registrationType === 'team' ? TEAM_2_TO_3_REGISTRATION_FEE : INDIVIDUAL_REGISTRATION_FEE;
 
   const toggleEventSelection = (id: string) => {
     if (selectedEventIds.includes(id)) {
       setSelectedEventIds(selectedEventIds.filter((eId) => eId !== id));
     } else {
       if (selectedEventIds.length >= MAX_SELECTABLE_EVENTS) {
-        setFormError(`You can select events under the ₹150 All-Event Pass.`);
+        setFormError(`You can select events under your registration pass.`);
         return;
       }
       setFormError('');
@@ -103,7 +106,7 @@ export default function RegistrationForm() {
 
   const handleStep1Continue = () => {
     if (selectedEventIds.length === 0) {
-      setFormError('Please select at least 1 event included in your ₹150 Pass.');
+      setFormError('Please select at least 1 event included in your registration pass.');
       return;
     }
     setFormError('');
@@ -141,7 +144,7 @@ export default function RegistrationForm() {
           utrNumber: data.utrNumber || 'PENDING_VERIFICATION',
           paymentMethod: 'upi',
           subEventId: selectedSubEventId,
-          amount: FLAT_REGISTRATION_FEE,
+          amount: registrationFee,
         }),
       });
 
@@ -158,7 +161,7 @@ export default function RegistrationForm() {
         phone: data.phone,
         college: data.college,
         eventsSelected: selectedTitles,
-        fee: FLAT_REGISTRATION_FEE,
+        fee: registrationFee,
         utrNumber: data.utrNumber || 'Submitted for Manual Check',
         date: new Date().toLocaleDateString('en-US', {
           month: 'short',
@@ -186,7 +189,7 @@ export default function RegistrationForm() {
         phone: data.phone,
         college: data.college,
         eventsSelected: selectedTitles,
-        fee: FLAT_REGISTRATION_FEE,
+        fee: registrationFee,
         utrNumber: data.utrNumber || 'Submitted for Manual Check',
         date: new Date().toLocaleDateString('en-US', {
           month: 'short',
@@ -215,7 +218,7 @@ export default function RegistrationForm() {
           {[
             { num: 1, label: 'Select Events' },
             { num: 2, label: 'Delegate Details' },
-            { num: 3, label: '₹150 Payment' },
+            { num: 3, label: 'Payment' },
             { num: 4, label: 'Confirmation' },
           ].map((s) => {
             const isCompleted = step > s.num;
@@ -251,19 +254,19 @@ export default function RegistrationForm() {
         </div>
       )}
 
-      {/* STEP 1: EVENT SELECTION (FOR ALL EVENTS FOR ₹150) */}
+      {/* STEP 1: EVENT SELECTION */}
       {step === 1 && (
         <div className="p-6 sm:p-8 rounded-2xl bg-surface border border-border space-y-6 animate-in fade-in duration-300">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border">
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <h2 className="text-xl font-bold text-white">Choose Your Events</h2>
                 <span className="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/30">
-                  ₹150 TOTAL PASS
+                  ₹{INDIVIDUAL_REGISTRATION_FEE} / PERSON · ₹{TEAM_2_TO_3_REGISTRATION_FEE} TEAM (2–3)
                 </span>
               </div>
               <p className="text-xs text-slate-400 mt-1">
-                Select any <strong className="text-white">events</strong> (Technical or Non-Technical) included in your flat ₹150 registration fee.
+                Select any <strong className="text-white">events</strong> you want to join. For specific games, look into the required members and decide what you want to join.
               </p>
             </div>
 
@@ -281,7 +284,7 @@ export default function RegistrationForm() {
           {/* Selected Events Summary Chips */}
           {selectedEventIds.length > 0 && (
             <div className="p-3.5 rounded-xl bg-red-950/20 border border-red-500/30 flex flex-wrap items-center gap-2">
-              <span className="text-[11px] font-mono uppercase text-red-400 font-semibold mr-1">Your All-Event Pass:</span>
+              <span className="text-[11px] font-mono uppercase text-red-400 font-semibold mr-1">Your selected events:</span>
               {selectedEvents.map((evt) => (
                 <span
                   key={evt.id}
@@ -411,7 +414,7 @@ export default function RegistrationForm() {
           <div className="pt-4 flex items-center justify-between border-t border-border">
             <div>
               <span className="text-[10px] uppercase font-mono text-slate-400 block">Total Symposium Fee</span>
-              <span className="text-xl font-bold font-mono text-red-400">₹{FLAT_REGISTRATION_FEE}</span>
+              <span className="text-xl font-bold font-mono text-red-400">₹{INDIVIDUAL_REGISTRATION_FEE} / ₹{TEAM_2_TO_3_REGISTRATION_FEE}</span>
             </div>
 
             <button
@@ -532,6 +535,39 @@ export default function RegistrationForm() {
             </div>
           </div>
 
+          <div className="pt-4 border-t border-border space-y-3">
+            <h3 className="text-xs uppercase font-mono text-red-400 font-bold">Registration type</h3>
+            <p className="text-[11px] text-slate-400">
+              ₹{INDIVIDUAL_REGISTRATION_FEE} per person, or ₹{TEAM_2_TO_3_REGISTRATION_FEE} for a team of 2–3. {SYMPOSIUM_METADATA.teamSizeNote}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button
+                type="button"
+                onClick={() => setRegistrationType('individual')}
+                className={`p-3 rounded-xl text-left border transition-all ${
+                  registrationType === 'individual'
+                    ? 'bg-red-500/15 border-red-500 text-white'
+                    : 'bg-white/[0.02] border-white/10 text-slate-300 hover:border-white/20'
+                }`}
+              >
+                <span className="text-sm font-bold block">Individual</span>
+                <span className="text-xs font-mono text-red-400">₹{INDIVIDUAL_REGISTRATION_FEE}</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setRegistrationType('team')}
+                className={`p-3 rounded-xl text-left border transition-all ${
+                  registrationType === 'team'
+                    ? 'bg-red-500/15 border-red-500 text-white'
+                    : 'bg-white/[0.02] border-white/10 text-slate-300 hover:border-white/20'
+                }`}
+              >
+                <span className="text-sm font-bold block">Team of 2–3</span>
+                <span className="text-xs font-mono text-red-400">₹{TEAM_2_TO_3_REGISTRATION_FEE}</span>
+              </button>
+            </div>
+          </div>
+
           {/* Optional Team inputs */}
           <div className="pt-4 border-t border-border space-y-4">
             <h3 className="text-xs uppercase font-mono text-red-400 font-bold">Team Information (If participating as a squad/team)</h3>
@@ -568,14 +604,14 @@ export default function RegistrationForm() {
               type="submit"
               className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-red-600 via-orange-600 to-red-700 text-white font-bold text-xs shadow-[0_0_25px_rgba(230,0,26,0.4)] hover:brightness-110 transition-all"
             >
-              <span>PROCEED TO PAYMENT (₹150)</span>
+              <span>PROCEED TO PAYMENT (₹{registrationFee})</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </form>
       )}
 
-      {/* STEP 3: OFFICIAL UPI PAYMENT (FLAT ₹150 FOR ALL EVENTS) */}
+      {/* STEP 3: OFFICIAL UPI PAYMENT */}
       {step === 3 && (
         <form
           onSubmit={handleSubmit(handleFinalSubmit)}
@@ -584,7 +620,9 @@ export default function RegistrationForm() {
           <div className="flex items-center justify-between pb-4 border-b border-border">
             <div>
               <h2 className="text-xl font-bold text-white">Official Symposium Payment</h2>
-              <p className="text-xs text-slate-400">Scan & Pay ₹150 flat fee via any UPI App, then enter your UTR number</p>
+              <p className="text-xs text-slate-400">
+                Scan &amp; Pay ₹{registrationFee} ({registrationType === 'team' ? 'team of 2–3' : 'per person'}) via any UPI App, then enter your UTR number
+              </p>
             </div>
             <span className="text-xs font-mono text-red-400">Step 3 of 3</span>
           </div>
@@ -592,8 +630,10 @@ export default function RegistrationForm() {
           {/* Amount Badge */}
           <div className="p-4 rounded-xl bg-gradient-to-r from-red-950/40 via-orange-950/40 to-surface border border-red-500/40 flex items-center justify-between">
             <div>
-              <span className="text-[10px] uppercase font-mono text-slate-400 block">Total Registration Pass (All Events)</span>
-              <span className="text-2xl font-black font-mono text-red-400">₹{FLAT_REGISTRATION_FEE}</span>
+              <span className="text-[10px] uppercase font-mono text-slate-400 block">
+                {registrationType === 'team' ? 'Team of 2–3 Registration' : 'Per Person Registration'}
+              </span>
+              <span className="text-2xl font-black font-mono text-red-400">₹{registrationFee}</span>
             </div>
             <div className="text-right">
               <span className="text-[11px] font-semibold text-white block">
@@ -636,7 +676,7 @@ export default function RegistrationForm() {
                     {OFFICIAL_PAYMENT_INFO.upiId}
                   </div>
                   <div className="text-xs font-mono font-bold text-amber-400">
-                    Amount: ₹150.00
+                    Amount: ₹{registrationFee}.00
                   </div>
                   <p className="text-[10px] text-slate-400 font-mono">Scan to pay with any UPI app</p>
                 </div>
@@ -667,16 +707,18 @@ export default function RegistrationForm() {
               <div className="text-[11px] text-slate-400 space-y-1 bg-white/[0.02] p-3 rounded-xl border border-white/5">
                 <p><strong>Payee:</strong> {OFFICIAL_PAYMENT_INFO.payeeName}</p>
                 <p><strong>Bank Account:</strong> {OFFICIAL_PAYMENT_INFO.accountInfo}</p>
-                <p><strong>Package:</strong> All Events Participation Included</p>
+                <p><strong>Package:</strong> {registrationType === 'team' ? 'Team of 2–3 (₹300)' : 'Individual (₹150)'}</p>
               </div>
 
               <a
                 href={`upi://pay?pa=${OFFICIAL_PAYMENT_INFO.upiId}&pn=${encodeURIComponent(
                   OFFICIAL_PAYMENT_INFO.payeeName
-                )}&am=150&cu=INR&tn=${encodeURIComponent('AETHERION26-2EVENTS-PASS')}`}
+                )}&am=${registrationFee}&cu=INR&tn=${encodeURIComponent(
+                  registrationType === 'team' ? 'AETHERION26-TEAM-2-3' : 'AETHERION26-INDIVIDUAL'
+                )}`}
                 className="w-full py-2.5 px-4 rounded-xl bg-red-600/20 hover:bg-red-600/30 border border-red-500/40 text-red-300 text-xs font-bold transition-colors flex items-center justify-center gap-2"
               >
-                <span>OPEN IN UPI APP (₹150)</span>
+                <span>OPEN IN UPI APP (₹{registrationFee})</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -714,7 +756,7 @@ export default function RegistrationForm() {
           <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-start gap-3">
             <ShieldCheck className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
             <div className="text-xs text-amber-300/90 leading-relaxed">
-              <strong>Verification Policy:</strong> Your ₹150 pass covering selected events will be logged with status{' '}
+              <strong>Verification Policy:</strong> Your ₹{registrationFee} registration covering selected events will be logged with status{' '}
               <span className="font-bold underline">PAYMENT VERIFICATION PENDING</span> and verified by the finance team against official bank statements.
             </div>
           </div>
@@ -755,7 +797,7 @@ export default function RegistrationForm() {
             <h2 className="text-2xl sm:text-3xl font-black text-white mt-1">
               Welcome to AETHERION&apos;26
             </h2>
-            <p className="text-xs text-slate-400 mt-1">Your 2-event delegate registration pass has been successfully recorded.</p>
+            <p className="text-xs text-slate-400 mt-1">Your registration has been successfully recorded.</p>
           </div>
 
           <div className="p-6 rounded-2xl bg-surface-subtle border border-white/10 space-y-4 max-w-lg mx-auto text-left">

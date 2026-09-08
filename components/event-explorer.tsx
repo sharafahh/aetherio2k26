@@ -121,7 +121,7 @@ function EventShowcaseCard({
           </div>
           <div className="flex items-center gap-1.5 font-bold text-white">
             <IndianRupee className="h-3.5 w-3.5 shrink-0 text-orange-300" />
-            <span>₹150 All-Event Pass</span>
+            <span>₹150 / person · ₹300 team (2–3)</span>
           </div>
         </div>
       </div>
@@ -187,13 +187,13 @@ export default function EventExplorer() {
       <div className="text-center max-w-3xl mx-auto mb-12">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-mono text-red-300 mb-4">
           <Flame className="w-3.5 h-3.5 text-orange-400" />
-          <span>11 ARENAS • ₹150 FOR ALL EVENTS</span>
+          <span>11 ARENAS • ₹150 / PERSON · ₹300 TEAM (2–3)</span>
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
           Explore All <span className="text-gradient">AETHERION Events</span>
         </h2>
         <p className="text-slate-200 text-sm sm:text-base mt-3 leading-relaxed">
-          Four technical arenas, five non-technical challenges, and two e-sports titles — all included in one pass.
+          Four technical arenas, five non-technical challenges, and two e-sports titles. ₹150 per person, or ₹300 for a team of 2–3. For specific games, look into the required members and decide what you want to join.
         </p>
       </div>
 

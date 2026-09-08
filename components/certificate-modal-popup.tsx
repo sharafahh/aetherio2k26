@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { CheckCircle2, XCircle, Award, X, Monitor, Target, Trophy } from 'lucide-react';
+import { CheckCircle2, XCircle, Award, X, Monitor, Target, Trophy, Users } from 'lucide-react';
+import { SYMPOSIUM_METADATA } from '@/lib/data/events';
 
 const POLICY_ROWS = [
   {
@@ -122,6 +123,18 @@ export default function CertificateModalPopup() {
               </div>
             );
           })}
+        </div>
+
+        <div className="p-3.5 rounded-xl bg-red-950/20 border border-red-500/30 flex items-start gap-3">
+          <div className="p-1.5 rounded-lg bg-red-500/10 text-red-400 flex-shrink-0 mt-0.5">
+            <Users className="w-4 h-4" />
+          </div>
+          <div>
+            <span className="text-xs font-bold text-white">Registration &amp; team size</span>
+            <p className="text-xs text-slate-300 mt-0.5">
+              {SYMPOSIUM_METADATA.pricingOffer}. {SYMPOSIUM_METADATA.teamSizeNote}
+            </p>
+          </div>
         </div>
 
         <div className="pt-2">

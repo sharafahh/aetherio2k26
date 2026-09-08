@@ -54,8 +54,8 @@ export default function HeroSection() {
         >
           Proudly presented by <strong className="text-fire-red">AMSphere</strong>,{' '}
           <strong className="text-fire-red">AETHERION&apos;26</strong> is a national-scale flagship symposium
-          for engineers, creators, competitive coders, and gamers. One pass covers every arena — technical
-          tracks, non-technical challenges, and e-sports — guided by{' '}
+          for engineers, creators, competitive coders, and gamers. Register at ₹150 per person, or ₹300
+          for a team of 2–3 — then pick the arenas that match your squad size. Guided by{' '}
           <span className="font-semibold text-fire-red">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</span>.
         </motion.p>
 
@@ -97,10 +97,10 @@ export default function HeroSection() {
                 ₹150
               </span>
               <span className="mt-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#ff1a00]">
-                Technical Events
+                Per Person
               </span>
               <span className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-slate-200">
-                + Non-Tech &amp; E-Sports included
+                Team of 2–3: ₹300
               </span>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function HeroSection() {
             rel="noopener noreferrer"
             className="hero-register-btn group inline-flex w-full items-center justify-center gap-2 rounded-xl border border-red-300/40 bg-gradient-to-r from-red-600 via-orange-600 to-red-700 px-8 py-4 text-sm font-black uppercase tracking-wide text-white shadow-[0_0_35px_rgba(230,0,26,0.55)] transition-transform duration-300 hover:scale-105 sm:w-auto"
           >
-            <span>Register Now — ₹150</span>
+            <span>Register Now — ₹150 / ₹300</span>
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
           <a
