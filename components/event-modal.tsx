@@ -6,7 +6,6 @@ import {
   X,
   Calendar,
   Clock,
-  MapPin,
   Users,
   Trophy,
   UserCheck,
@@ -72,14 +71,10 @@ export default function EventModal({ event, onClose }: EventModalProps) {
           </p>
 
           {/* Quick Highlight Stats Bar */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 pt-4 border-t border-red-500/20 text-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 pt-4 border-t border-red-500/20 text-xs">
             <div className="flex items-center gap-2 text-slate-300">
               <Clock className="w-4 h-4 text-red-400 flex-shrink-0" />
               <span>{event.time}</span>
-            </div>
-            <div className="flex items-center gap-2 text-slate-300">
-              <MapPin className="w-4 h-4 text-orange-400 flex-shrink-0" />
-              <span>{event.venue}</span>
             </div>
             <div className="flex items-center gap-2 text-slate-300">
               <Users className="w-4 h-4 text-cyan-300 flex-shrink-0" />

@@ -22,7 +22,6 @@ import {
   Dumbbell,
   Sparkles,
   Clock,
-  MapPin,
   Users,
   ChevronRight,
   Flame,
@@ -93,7 +92,7 @@ function EventShowcaseCard({
             {event.title}
           </h3>
           <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400">
-            Flip for time, venue &amp; team
+            Flip for time &amp; team
           </p>
         </button>
 
@@ -123,10 +122,6 @@ function EventShowcaseCard({
               <li className="flex items-center gap-2.5">
                 <Clock className="h-4 w-4 shrink-0 text-red-400" aria-hidden="true" />
                 <span>{event.time}</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <MapPin className="h-4 w-4 shrink-0 text-slate-300" aria-hidden="true" />
-                <span>{event.venue}</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Users className="h-4 w-4 shrink-0 text-cyan-300" aria-hidden="true" />
@@ -292,7 +287,7 @@ export default function EventExplorer() {
           Five technical arenas, four non-technical challenges, and two esports titles. Check each game’s squad size before you lock in.
         </p>
         <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
-          Pick a track, then flip a card for time, venue, and team size
+          Pick a track, then flip a card for time and team size
         </p>
       </div>
 

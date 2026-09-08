@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Calendar, MapPin, Users, IndianRupee } from 'lucide-react';
+import { Calendar, Users, IndianRupee } from 'lucide-react';
 import { EventListItem } from '@/types';
 
 interface EventCardProps {
@@ -44,10 +44,6 @@ export default function EventCard({ event }: EventCardProps) {
           <div className="flex items-center text-sm text-[#9ca3af]">
             <Calendar className="w-4 h-4 mr-2 text-[#6b7280]" />
             {new Date(event.date).toLocaleDateString('en-IN')} at {event.time}
-          </div>
-          <div className="flex items-center text-sm text-[#9ca3af]">
-            <MapPin className="w-4 h-4 mr-2 text-[#6b7280]" />
-            {event.venue}
           </div>
           <div className="flex items-center text-sm text-[#9ca3af]">
             <Users className="w-4 h-4 mr-2 text-[#6b7280]" />
