@@ -84,24 +84,33 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.36 }}
-          className="entry-pass-card group relative mx-auto mt-8 w-full max-w-[280px] cursor-default rounded-2xl p-[1px] transition-transform duration-300 hover:scale-[1.03]"
+          className="entry-pass-card group relative mx-auto mt-8 w-full max-w-[420px] cursor-default rounded-2xl p-[1px] transition-transform duration-300 hover:scale-[1.03]"
         >
-          <div className="relative overflow-hidden rounded-2xl bg-[#0a0305]/80 px-8 py-6 backdrop-blur-xl">
+          <div className="relative overflow-hidden rounded-2xl bg-[#0a0305]/80 px-5 py-6 sm:px-6 backdrop-blur-xl">
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-red-500/10 via-transparent to-orange-500/10" />
             <div className="relative flex flex-col items-center">
               <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-[#ff2a00]">
                 <Ticket className="h-3.5 w-3.5" />
                 Entry Pass
               </span>
-              <span className="mt-2 text-5xl font-black tracking-tight text-white drop-shadow-[0_0_22px_rgba(230,0,26,0.55)]">
-                ₹150
-              </span>
-              <span className="mt-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#ff1a00]">
-                Per Person
-              </span>
-              <span className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-slate-200">
-                Team of 2–3: ₹300
-              </span>
+              <div className="mt-4 grid w-full grid-cols-2 divide-x divide-red-500/30">
+                <div className="flex flex-col items-center px-3">
+                  <span className="text-4xl font-black tracking-tight text-white drop-shadow-[0_0_22px_rgba(230,0,26,0.55)] sm:text-5xl">
+                    ₹150
+                  </span>
+                  <span className="mt-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#ff1a00]">
+                    Per Person
+                  </span>
+                </div>
+                <div className="flex flex-col items-center px-3">
+                  <span className="text-4xl font-black tracking-tight text-white drop-shadow-[0_0_22px_rgba(230,0,26,0.55)] sm:text-5xl">
+                    ₹300
+                  </span>
+                  <span className="mt-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#ff1a00]">
+                    Team of 2–3
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -118,7 +127,7 @@ export default function HeroSection() {
             rel="noopener noreferrer"
             className="hero-register-btn group inline-flex w-full items-center justify-center gap-2 rounded-xl border border-red-300/40 bg-gradient-to-r from-red-600 via-orange-600 to-red-700 px-8 py-4 text-sm font-black uppercase tracking-wide text-white shadow-[0_0_35px_rgba(230,0,26,0.55)] transition-transform duration-300 hover:scale-105 sm:w-auto"
           >
-            <span>Register Now — ₹150 / ₹300</span>
+            <span>Register Now</span>
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
           <a
