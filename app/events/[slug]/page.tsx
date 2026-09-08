@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic';
 
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { Calendar, MapPin, Users, IndianRupee, User, Phone } from 'lucide-react';
+import { Calendar, Users, IndianRupee, User, Phone } from 'lucide-react';
 import Navbar from '@/components/navbar';
 import BackButton from '@/components/ui/back-button';
 
@@ -56,10 +56,6 @@ export default async function EventPage({ params }: { params: { slug: string } }
                     month: 'long',
                     day: 'numeric',
                   })}
-                </div>
-                <div className="flex items-center text-[#d1d5db]">
-                  <MapPin className="w-5 h-5 mr-3 text-[#4f46e5]" />
-                  {event.venue}
                 </div>
                 <div className="flex items-center text-[#d1d5db]">
                   <Users className="w-5 h-5 mr-3 text-[#4f46e5]" />

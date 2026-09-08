@@ -107,7 +107,7 @@ export const GOOGLE_FORM_REGISTRATION_URL = "https://docs.google.com/forms/d/e/1
 export const SYMPOSIUM_METADATA = {
   name: "AETHERION'26",
   presenter: "AMSphere",
-  tagline: "Convergence of Intelligence, Technology & Innovation",
+  tagline: "We are excited to welcome you to the symposium, with cash awards for the winners.",
   institution: "Aalim Muhammed Salegh College of Engineering",
   date: "12th September 2026",
   venue: "Aalim Muhammed Salegh College of Engineering",
@@ -121,7 +121,7 @@ export const SYMPOSIUM_METADATA = {
     { label: "Technical Events", value: "5", prefix: "" },
     { label: "Non-Technical Events", value: "4", prefix: "" },
     { label: "E-Sports Events", value: "2", prefix: "" },
-    { label: "Per Person / Team 2–3", value: "₹150 / ₹300", prefix: "" },
+    { label: "Live Arenas", value: "11", prefix: "" },
   ]
 };
 
@@ -723,6 +723,6 @@ export const FAQ_DATA = [
   },
   {
     question: "Where will AETHERION'26 be held and is transportation/food provided?",
-    answer: "AETHERION'26 will be held at Aalim Muhammed Salegh College of Engineering. Refreshments and lunch are provided for all registered participants. Detailed directions and campus map links are available in our Contact section."
+    answer: "AETHERION'26 will be held at Aalim Muhammed Salegh College of Engineering. Refreshments and lunch are provided for all registered participants."
   }
 ];
