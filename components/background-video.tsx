@@ -17,7 +17,7 @@ export function MobileHeroVideo() {
           }
         }}
         src="/mobile-bg.mp4"
-        className="w-full h-full object-cover object-center opacity-100 pointer-events-none z-0"
+        className="w-full h-full object-cover object-center opacity-100 pointer-events-none z-0 brightness-[0.82] saturate-[0.65] hue-rotate-[-12deg]"
         autoPlay
         loop
         muted
@@ -36,7 +36,7 @@ export function DesktopBackgroundVideo() {
     <div className="hidden md:block fixed inset-0 pointer-events-none z-0 overflow-hidden">
       <video
         src="/hero-dragon-2.mp4"
-        className="h-full w-full object-cover object-center opacity-100"
+        className="h-full w-full object-cover object-center opacity-100 brightness-[0.82] saturate-[0.65] hue-rotate-[-12deg]"
         autoPlay
         loop
         muted

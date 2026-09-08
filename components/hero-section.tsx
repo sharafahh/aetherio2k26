@@ -31,24 +31,11 @@ export default function HeroSection() {
           </span>
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.2 }}
-          className="mt-8 max-w-[820px] text-sm leading-relaxed text-slate-100 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] sm:text-base md:text-lg"
-        >
-          Proudly presented by <strong className="text-fire-red">AMSphere</strong>,{' '}
-          <strong className="text-fire-red">AETHERION&apos;26</strong> is a national-scale flagship symposium
-          for engineers, creators, competitive coders, and gamers. Register at ₹150 per person, or ₹300
-          for a team of 2–3 — then pick the arenas that match your squad size. Guided by{' '}
-          <span className="font-semibold text-fire-red">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</span>.
-        </motion.p>
-
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.26 }}
-          className="mt-6 flex flex-col items-center text-center"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-8 flex flex-col items-center text-center"
         >
           <p className="text-2xl font-black tracking-tight text-white drop-shadow-[0_3px_16px_rgba(0,0,0,0.95)] sm:text-3xl md:text-4xl">
             12th September 2026
@@ -69,29 +56,28 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.32 }}
-          className="entry-pass-card group relative mx-auto mt-6 w-full max-w-[260px] cursor-default rounded-xl p-[1px] transition-transform duration-300 hover:scale-[1.03]"
+          className="entry-pass-card group relative mx-auto mt-6 w-full max-w-[200px] cursor-default rounded-lg p-px transition-transform duration-300 hover:scale-[1.03]"
         >
-          <div className="relative overflow-hidden rounded-xl bg-[#0a0305]/80 px-3 py-3 sm:px-4 backdrop-blur-xl">
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-red-500/10 via-transparent to-orange-500/10" />
+          <div className="relative overflow-hidden rounded-lg bg-[#0a0305]/85 px-2.5 py-2">
             <div className="relative flex flex-col items-center">
-              <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.2em] text-[#ff2a00]">
-                <Ticket className="h-3 w-3" />
+              <span className="inline-flex items-center gap-1 text-[8px] font-bold uppercase tracking-[0.18em] text-[#ff2a00]">
+                <Ticket className="h-2.5 w-2.5" />
                 Entry Pass
               </span>
-              <div className="mt-2 grid w-full grid-cols-2 divide-x divide-red-500/30">
-                <div className="flex flex-col items-center px-2">
-                  <span className="text-xl font-black tracking-tight text-white drop-shadow-[0_0_16px_rgba(230,0,26,0.55)] sm:text-2xl">
+              <div className="mt-1.5 grid w-full grid-cols-2 divide-x divide-red-500/30">
+                <div className="flex flex-col items-center px-1.5">
+                  <span className="text-lg font-black tracking-tight text-white drop-shadow-[0_0_12px_rgba(230,0,26,0.55)]">
                     ₹150
                   </span>
-                  <span className="mt-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-[#ff1a00]">
+                  <span className="mt-0.5 text-[8px] font-bold uppercase tracking-[0.1em] text-[#ff1a00]">
                     Per Person
                   </span>
                 </div>
-                <div className="flex flex-col items-center px-2">
-                  <span className="text-xl font-black tracking-tight text-white drop-shadow-[0_0_16px_rgba(230,0,26,0.55)] sm:text-2xl">
+                <div className="flex flex-col items-center px-1.5">
+                  <span className="text-lg font-black tracking-tight text-white drop-shadow-[0_0_12px_rgba(230,0,26,0.55)]">
                     ₹300
                   </span>
-                  <span className="mt-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-[#ff1a00]">
+                  <span className="mt-0.5 text-[8px] font-bold uppercase tracking-[0.1em] text-[#ff1a00]">
                     Team of 2–3
                   </span>
                 </div>
