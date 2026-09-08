@@ -4,9 +4,9 @@ import { Providers } from '@/components/providers';
 import CertificateModalPopup from '@/components/certificate-modal-popup';
 
 export const metadata: Metadata = {
-  title: "AMSphere Presents AETHERION'26 | Convergence of Intelligence, Technology & Innovation",
+  title: "AMSphere Presents AETHERION'26 | Symposium",
   description:
-    "Official portal for AETHERION'26 presented by AMSphere — A premier National Level Technical & Cultural Symposium featuring Neural Quest, AI Escape Room Reverse Engineering, AI Web Sprint, E-Sports Arena, Film Hunt, and more.",
+    "AETHERION'26 presented by AMSphere. We are excited to welcome you to the symposium, with cash awards for the winners.",
   keywords: [
     "AETHERION",
     "AETHERION 26",
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     "E-Sports Championship",
   ],
   openGraph: {
-    title: "AMSphere Presents AETHERION'26 | National Level Symposium",
-    description: "Convergence of Intelligence, Technology & Innovation. Register now — ₹150 per person, or ₹300 for a team of 2–3.",
+    title: "AMSphere Presents AETHERION'26 | Symposium",
+    description: "We are excited to welcome you to the symposium, with cash awards for the winners.",
     type: "website",
   },
 };

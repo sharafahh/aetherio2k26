@@ -46,6 +46,55 @@ export interface EventItem {
   isActive: boolean;
 }
 
+/** Canonical category ids used by EventItem.category. Add a union member here when introducing a new track. */
+export type EventCategoryId = EventItem['category'];
+
+/**
+ * Integration point for event-page sections.
+ * Append an object to this array (and a matching EventItem.category value) to add a track
+ * without changing EventExplorer navigation or listing logic.
+ */
+export interface EventCategorySection {
+  id: EventCategoryId;
+  /** DOM id + URL hash used for smooth in-page navigation */
+  slug: string;
+  title: string;
+  description: string;
+  iconName: string;
+  gridClass: string;
+  accent: 'crimson' | 'amber' | 'orange';
+}
+
+export const EVENT_CATEGORY_SECTIONS: EventCategorySection[] = [
+  {
+    id: 'technical',
+    slug: 'events-technical',
+    title: 'Technical Events',
+    description: 'AI, code, paper, and product arenas built for engineers.',
+    iconName: 'Cpu',
+    gridClass: 'grid grid-cols-1 md:grid-cols-2 gap-6',
+    accent: 'crimson',
+  },
+  {
+    id: 'non-technical',
+    slug: 'events-non-technical',
+    title: 'Non-Technical Events',
+    description: 'Creative, performance, and campus-challenge tracks.',
+    iconName: 'Palette',
+    gridClass: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6',
+    accent: 'amber',
+  },
+  {
+    id: 'e-sports',
+    slug: 'events-esports',
+    title: 'Esports Events',
+    description: 'Competitive titles in the AETHERION e-sports arena.',
+    iconName: 'Gamepad2',
+    gridClass: 'grid grid-cols-1 md:grid-cols-2 gap-6 md:max-w-4xl',
+    accent: 'orange',
+  },
+];
+
 export const OFFICIAL_PAYMENT_INFO = {
   upiId: 'abdulmalik4041977@okhdfcbank',
   accountInfo: 'Tamilnad Mercantile Bank 6781',
@@ -58,7 +107,7 @@ export const GOOGLE_FORM_REGISTRATION_URL = "https://docs.google.com/forms/d/e/1
 export const SYMPOSIUM_METADATA = {
   name: "AETHERION'26",
   presenter: "AMSphere",
-  tagline: "Convergence of Intelligence, Technology & Innovation",
+  tagline: "We are excited to welcome you to the symposium, with cash awards for the winners.",
   institution: "Aalim Muhammed Salegh College of Engineering",
   date: "12th September 2026",
   venue: "Aalim Muhammed Salegh College of Engineering",
@@ -72,7 +121,7 @@ export const SYMPOSIUM_METADATA = {
     { label: "Technical Events", value: "5", prefix: "" },
     { label: "Non-Technical Events", value: "4", prefix: "" },
     { label: "E-Sports Events", value: "2", prefix: "" },
-    { label: "Per Person / Team 2–3", value: "₹150 / ₹300", prefix: "" },
+    { label: "Live Arenas", value: "11", prefix: "" },
   ]
 };
 
@@ -579,6 +628,10 @@ export const EVENTS_DATA: EventItem[] = [
   },
 ];
 
+export function getEventsByCategory(categoryId: EventCategoryId, events: EventItem[] = EVENTS_DATA) {
+  return events.filter((event) => event.category === categoryId);
+}
+
 export const TIMELINE_SCHEDULE = [
   {
     day: "Day 1",
@@ -670,6 +723,6 @@ export const FAQ_DATA = [
   },
   {
     question: "Where will AETHERION'26 be held and is transportation/food provided?",
-    answer: "AETHERION'26 will be held at Aalim Muhammed Salegh College of Engineering. Refreshments and lunch are provided for all registered participants. Detailed directions and campus map links are available in our Contact section."
+    answer: "AETHERION'26 will be held at Aalim Muhammed Salegh College of Engineering. Refreshments and lunch are provided for all registered participants."
   }
 ];
