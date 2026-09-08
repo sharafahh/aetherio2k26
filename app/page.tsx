@@ -103,12 +103,12 @@ export default function HomePage() {
       <FAQSection />
 
       {/* ========================================================================= */}
-      {/* 9. CONTACT & CAMPUS PORTAL */}
+      {/* 9. CAMPUS MAP (enquiry form + contact directory removed) */}
       {/* ========================================================================= */}
       <ContactSection />
 
       {/* ========================================================================= */}
-      {/* 10. PREMIUM DRAGON FOOTER */}
+      {/* 10. SITE FOOTER — branding and in-page nav only (no enquiry / people contacts) */}
       {/* ========================================================================= */}
       <footer className="border-t border-red-500/20 bg-[#060203] py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
@@ -128,14 +128,14 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-xs text-slate-400">
+          <nav aria-label="Footer" className="flex flex-wrap justify-center gap-6 text-xs text-slate-400">
             <a href="#about" className="hover:text-red-400 transition-colors">About</a>
             <a href="#events" className="hover:text-red-400 transition-colors">Events</a>
             <a href="#schedule" className="hover:text-red-400 transition-colors">Schedule</a>
             <a href="#rules" className="hover:text-red-400 transition-colors">Rules</a>
             <a href="#faq" className="hover:text-red-400 transition-colors">FAQ</a>
-            <a href="#contact" className="hover:text-red-400 transition-colors">Contact</a>
-          </div>
+            <a href="#contact" className="hover:text-red-400 transition-colors">Campus</a>
+          </nav>
 
           <div className="text-center md:text-right">
             <p className="text-xs text-slate-500">

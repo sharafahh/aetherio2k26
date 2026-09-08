@@ -112,6 +112,9 @@ export const SYMPOSIUM_METADATA = {
   date: "12th September 2026",
   venue: "Aalim Muhammed Salegh College of Engineering",
   venueMapUrl: "https://maps.app.goo.gl/KXEwRv9tYrupnzii9?g_st=aw",
+  /** Key-free Google Maps embed pinned to the college campus (used in the site footer). */
+  campusMapEmbedUrl:
+    "https://maps.google.com/maps?q=Aalim+Muhammed+Salegh+College+of+Engineering&z=16&hl=en&output=embed",
   registrationUrl: GOOGLE_FORM_REGISTRATION_URL,
   email: "contact@aetherion26.org",
   pricingOffer: "₹150 per person · ₹300 for a team of 2–3",

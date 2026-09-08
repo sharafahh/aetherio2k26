@@ -213,6 +213,31 @@
   background: rgba(230, 0, 26, 0.04);
 }
 
+/* Footer / campus map: fluid iframe that keeps a readable geographic view on all viewports */
+.campus-map {
+  margin: 0;
+  width: 100%;
+}
+
+.campus-map__frame {
+  display: block;
+  width: 100%;
+  min-height: 280px;
+  height: clamp(280px, 52vw, 480px);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 1.25rem;
+  background: #0a0305;
+}
+
+.campus-map__caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+  text-align: center;
+}
+
 .event-card-shell {
   background: rgba(14, 5, 8, 0.72);
   backdrop-filter: blur(18px);
