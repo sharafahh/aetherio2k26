@@ -109,13 +109,19 @@
   background-size: 28px 28px;
 }
 
+.hero-readability-overlay {
+  background:
+    radial-gradient(ellipse 78% 72% at 50% 42%, rgba(3, 1, 2, 0.82) 0%, rgba(3, 1, 2, 0.52) 42%, rgba(3, 1, 2, 0.18) 72%, transparent 100%),
+    linear-gradient(180deg, rgba(3, 1, 2, 0.58) 0%, rgba(3, 1, 2, 0.28) 38%, rgba(3, 1, 2, 0.12) 62%, rgba(3, 1, 2, 0.7) 100%);
+}
+
 .entry-pass-card {
   background: linear-gradient(135deg, rgba(230, 0, 26, 0.85), rgba(249, 115, 22, 0.55), rgba(230, 0, 26, 0.75));
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45), 0 0 16px rgba(230, 0, 26, 0.22);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 28px rgba(230, 0, 26, 0.28);
 }
 
 .entry-pass-card:hover {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 20px rgba(249, 115, 22, 0.32);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.62), 0 0 36px rgba(249, 115, 22, 0.4);
 }
 
 .hero-register-btn:hover {
@@ -163,7 +169,8 @@
 
 /* Mobile-only video background rules (Strictly hidden above 768px) */
 @media (min-width: 769px) {
-  .mobile-video-background {
+  .mobile-video-background,
+  .mobile-video-overlay {
     display: none !important;
   }
 }

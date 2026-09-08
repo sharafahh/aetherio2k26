@@ -20,7 +20,7 @@ import BackgroundVideo from '@/components/background-video';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-transparent text-slate-100 relative overflow-x-hidden selection:bg-red-600/40">
+    <div className="min-h-screen bg-void text-slate-100 relative overflow-x-hidden selection:bg-red-600/40">
 
       {/* Global Background Video (Fixed for Mobile & Desktop) */}
       <BackgroundVideo />
@@ -110,7 +110,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 10. PREMIUM DRAGON FOOTER */}
       {/* ========================================================================= */}
-      <footer className="border-t border-red-500/20 bg-transparent py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="border-t border-red-500/20 bg-[#060203] py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex flex-col items-center md:items-start space-y-2 text-center md:text-left">
             <span className="text-[10px] uppercase font-mono tracking-widest text-red-400 font-bold flex items-center gap-1">
