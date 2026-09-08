@@ -9,10 +9,6 @@ import React from 'react';
 export function MobileHeroVideo() {
   return (
     <div className="mobile-video-background fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden md:hidden">
-      {/* Dark gradient overlay for smooth text contrast */}
-      <div className="mobile-video-overlay absolute inset-0 z-10 bg-gradient-to-b from-black/55 via-black/35 to-[#040203]/90 pointer-events-none" />
-
-      {/* Clear, Sharp, Fixed Playing Mobile Background Video */}
       <video
         ref={(v) => {
           if (v) {
@@ -37,11 +33,10 @@ export function MobileHeroVideo() {
  */
 export function DesktopBackgroundVideo() {
   return (
-    <div className="hidden md:block fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#060203]">
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/45 via-black/28 to-[#060203]/88" />
+    <div className="hidden md:block fixed inset-0 pointer-events-none z-0 overflow-hidden">
       <video
         src="/hero-dragon-2.mp4"
-        className="h-full w-full object-cover object-center opacity-75 transition-all duration-300"
+        className="h-full w-full object-cover object-center opacity-100"
         autoPlay
         loop
         muted
