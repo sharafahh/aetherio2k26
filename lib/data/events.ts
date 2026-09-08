@@ -124,7 +124,7 @@ export const SYMPOSIUM_METADATA = {
     { label: "Technical Events", value: "5", prefix: "" },
     { label: "Non-Technical Events", value: "4", prefix: "" },
     { label: "E-Sports Events", value: "2", prefix: "" },
-    { label: "Per Person / Team 2–3", value: "₹150 / ₹300", prefix: "" },
+    { label: "Live Arenas", value: "11", prefix: "" },
   ]
 };
 

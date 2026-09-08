@@ -49,8 +49,10 @@ export default function EventModal({ event, onClose }: EventModalProps) {
           <div className="flex items-center gap-2 mb-3">
             <span
               className={`text-[10px] font-mono font-bold tracking-widest px-2.5 py-1 rounded-full uppercase border ${event.category === 'technical'
-                  ? 'bg-red-500/10 text-red-400 border-red-500/30'
-                  : 'bg-orange-500/10 text-orange-400 border-orange-500/30'
+                  ? 'bg-red-500/15 text-red-300 border-red-400/40'
+                  : event.category === 'e-sports'
+                    ? 'bg-violet-500/15 text-violet-200 border-violet-400/40'
+                    : 'bg-cyan-500/15 text-cyan-200 border-cyan-400/40'
                 }`}
             >
               {event.category}
@@ -70,7 +72,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
           </p>
 
           {/* Quick Highlight Stats Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-4 border-t border-red-500/20 text-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 pt-4 border-t border-red-500/20 text-xs">
             <div className="flex items-center gap-2 text-slate-300">
               <Clock className="w-4 h-4 text-red-400 flex-shrink-0" />
               <span>{event.time}</span>
@@ -80,12 +82,8 @@ export default function EventModal({ event, onClose }: EventModalProps) {
               <span>{event.venue}</span>
             </div>
             <div className="flex items-center gap-2 text-slate-300">
-              <Users className="w-4 h-4 text-red-300 flex-shrink-0" />
+              <Users className="w-4 h-4 text-cyan-300 flex-shrink-0" />
               <span>{event.teamSize}</span>
-            </div>
-            <div className="flex items-center gap-2 text-slate-300">
-              <Trophy className="w-4 h-4 text-amber-400 flex-shrink-0" />
-              <span>₹150 / person · ₹300 team (2–3)</span>
             </div>
           </div>
         </div>
@@ -262,16 +260,14 @@ export default function EventModal({ event, onClose }: EventModalProps) {
         {/* Footer Action Bar */}
         <div className="p-4 sm:p-6 bg-[#090305] border-t border-red-500/20 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <span className="text-xs text-slate-400 block">Symposium Delegate Pass</span>
-            <span className="text-lg font-bold font-mono text-red-400">
-              ₹150 / ₹300 <span className="text-xs text-slate-400 font-normal">(person / team of 2–3)</span>
-            </span>
+            <span className="text-xs text-slate-400 block">Symposium pass in the header</span>
+            <span className="text-sm font-semibold text-slate-200">Register once, then pick your arenas.</span>
           </div>
 
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <button
               onClick={onClose}
-              className="flex-1 sm:flex-initial px-5 py-2.5 rounded-lg border border-white/10 text-xs font-semibold text-slate-300 hover:bg-white/5 transition-colors"
+              className="flex-1 sm:flex-initial px-5 py-2.5 rounded-lg border border-white/10 text-xs font-semibold text-slate-300 hover:bg-white/5 transition-colors duration-300"
             >
               Close
             </button>
@@ -279,9 +275,9 @@ export default function EventModal({ event, onClose }: EventModalProps) {
               href={GOOGLE_FORM_REGISTRATION_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 sm:flex-initial flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white text-xs font-bold px-6 py-2.5 rounded-lg shadow-[0_0_20px_rgba(230,0,26,0.4)] transition-all"
+              className="flex-1 sm:flex-initial flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white text-xs font-bold px-6 py-2.5 rounded-lg shadow-[0_0_20px_rgba(230,0,26,0.4)] transition-all duration-300"
             >
-              <span>REGISTER (₹150 / ₹300)</span>
+              <span>REGISTER NOW</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

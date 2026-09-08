@@ -5,7 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { GOOGLE_FORM_REGISTRATION_URL } from '@/lib/data/events';
-import { Menu, X, Flame, Shield, ArrowRight } from 'lucide-react';
+import { Menu, X, Flame, ArrowRight } from 'lucide-react';
+import RegistrationPassBadge from '@/components/registration-pass-badge';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -70,20 +71,26 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={getHref(link.href)}
-              className="text-xs uppercase tracking-wider font-medium text-slate-300 hover:text-red-400 px-3.5 py-1.5 rounded-full hover:bg-red-500/10 transition-all"
+              className="text-xs uppercase tracking-wider font-medium text-slate-300 hover:text-red-400 px-3.5 py-1.5 rounded-full hover:bg-red-500/10 transition-all duration-300"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        {/* Action Buttons */}
-        <div className="hidden sm:flex items-center gap-3">
+        {/* Pass info (single pricing surface) + register */}
+        <div className="hidden sm:flex items-center gap-2.5 lg:gap-3">
+          <div className="hidden xl:block">
+            <RegistrationPassBadge />
+          </div>
+          <div className="hidden sm:block xl:hidden">
+            <RegistrationPassBadge compact />
+          </div>
           <a
             href={GOOGLE_FORM_REGISTRATION_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group overflow-hidden rounded-xl p-[1px] font-bold text-xs transition-transform active:scale-95 shadow-[0_0_25px_rgba(230,0,26,0.35)]"
+            className="relative group overflow-hidden rounded-xl p-[1px] font-bold text-xs transition-transform duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_0_25px_rgba(230,0,26,0.35)]"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-red-600 via-orange-600 to-red-700 rounded-xl animate-gradient opacity-90 group-hover:opacity-100 transition-opacity" />
             <span className="relative flex items-center gap-1.5 px-4 py-2 bg-[#0d0406] rounded-[11px] text-white transition-colors group-hover:bg-transparent">
@@ -121,6 +128,7 @@ export default function Navbar() {
           </div>
 
           <div className="pt-2 flex flex-col gap-3">
+            <RegistrationPassBadge />
             <a
               href={GOOGLE_FORM_REGISTRATION_URL}
               target="_blank"
