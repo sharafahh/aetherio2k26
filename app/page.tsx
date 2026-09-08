@@ -8,7 +8,6 @@ import ScheduleSection from '@/components/schedule-section';
 
 import RulesSection from '@/components/rules-section';
 import FAQSection from '@/components/faq-section';
-import ContactSection from '@/components/contact-section';
 import CustomCursor from '@/components/custom-cursor';
 import { SYMPOSIUM_METADATA } from '@/lib/data/events';
 import {
@@ -48,22 +47,18 @@ export default function HomePage() {
           </div>
 
           <h2 className="mt-5 max-w-3xl text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
-            A national battleground for <span className="text-fire-red">engineers &amp; creators</span>
+            AETHERION&apos;26 Symposium
           </h2>
 
           <p className="mt-5 max-w-[820px] text-slate-200 text-sm sm:text-base leading-relaxed">
-            Proudly presented by <strong className="text-fire-red">AMSphere</strong>, <strong className="text-white">AETHERION&apos;26</strong> is a national-scale flagship symposium crafted as a premier battleground for ambitious engineers, digital creators, competitive coders, gamers, and athletic minds.
-          </p>
-
-          <p className="mt-3 max-w-[820px] text-slate-200 text-xs sm:text-sm leading-relaxed">
-            Guided by the spirit of the dragon — <strong className="text-fire-red font-mono">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</strong> — the symposium offers high-stakes technical tracks, non-technical arenas, and e-sports. Registration is <strong className="text-fire-red">₹150 per person</strong>, or <strong className="text-fire-red">₹300 for a team of 2–3</strong>.
+            We are excited to welcome you to the symposium, with cash awards for the winners.
           </p>
 
           <div className="mt-10 grid w-full grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
             {SYMPOSIUM_METADATA.stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="p-5 sm:p-6 rounded-2xl bg-surface border border-border hover:border-red-500/40 hover:shadow-[0_0_25px_rgba(230,0,26,0.2)] transition-all flex flex-col items-center justify-between group"
+                className="p-5 sm:p-6 rounded-2xl bg-white/[0.05] border border-white/10 hover:border-red-400/40 hover:shadow-[0_0_25px_rgba(230,0,26,0.25)] transition-all duration-300 flex flex-col items-center justify-between group"
               >
                 <span className="text-3xl sm:text-4xl font-black font-mono text-white group-hover:text-[#ff1a00] transition-colors">
                   {stat.value}
@@ -103,12 +98,7 @@ export default function HomePage() {
       <FAQSection />
 
       {/* ========================================================================= */}
-      {/* 9. CAMPUS MAP (enquiry form + contact directory removed) */}
-      {/* ========================================================================= */}
-      <ContactSection />
-
-      {/* ========================================================================= */}
-      {/* 10. SITE FOOTER — branding and in-page nav only (no enquiry / people contacts) */}
+      {/* SITE FOOTER — branding and in-page nav only */}
       {/* ========================================================================= */}
       <footer className="border-t border-red-500/20 bg-[#060203] py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
@@ -121,7 +111,7 @@ export default function HomePage() {
               AETHERION<span className="text-red-500 font-mono text-sm">&apos;26</span>
             </span>
             <p className="text-xs text-slate-500 max-w-sm">
-              [OFFICIAL TAGLINE — ADD WHEN PROVIDED]
+              We are excited to welcome you to the symposium, with cash awards for the winners.
             </p>
             <p className="text-[11px] text-slate-400 font-mono">
               Presented by AMSphere
@@ -134,7 +124,6 @@ export default function HomePage() {
             <a href="#schedule" className="hover:text-red-400 transition-colors">Schedule</a>
             <a href="#rules" className="hover:text-red-400 transition-colors">Rules</a>
             <a href="#faq" className="hover:text-red-400 transition-colors">FAQ</a>
-            <a href="#contact" className="hover:text-red-400 transition-colors">Campus</a>
           </nav>
 
           <div className="text-center md:text-right">
