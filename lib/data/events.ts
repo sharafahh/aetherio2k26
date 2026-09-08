@@ -46,6 +46,55 @@ export interface EventItem {
   isActive: boolean;
 }
 
+/** Canonical category ids used by EventItem.category. Add a union member here when introducing a new track. */
+export type EventCategoryId = EventItem['category'];
+
+/**
+ * Integration point for event-page sections.
+ * Append an object to this array (and a matching EventItem.category value) to add a track
+ * without changing EventExplorer navigation or listing logic.
+ */
+export interface EventCategorySection {
+  id: EventCategoryId;
+  /** DOM id + URL hash used for smooth in-page navigation */
+  slug: string;
+  title: string;
+  description: string;
+  iconName: string;
+  gridClass: string;
+  accent: 'crimson' | 'amber' | 'orange';
+}
+
+export const EVENT_CATEGORY_SECTIONS: EventCategorySection[] = [
+  {
+    id: 'technical',
+    slug: 'events-technical',
+    title: 'Technical Events',
+    description: 'AI, code, paper, and product arenas built for engineers.',
+    iconName: 'Cpu',
+    gridClass: 'grid grid-cols-1 md:grid-cols-2 gap-6',
+    accent: 'crimson',
+  },
+  {
+    id: 'non-technical',
+    slug: 'events-non-technical',
+    title: 'Non-Technical Events',
+    description: 'Creative, performance, and campus-challenge tracks.',
+    iconName: 'Palette',
+    gridClass: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6',
+    accent: 'amber',
+  },
+  {
+    id: 'e-sports',
+    slug: 'events-esports',
+    title: 'Esports Events',
+    description: 'Competitive titles in the AETHERION e-sports arena.',
+    iconName: 'Gamepad2',
+    gridClass: 'grid grid-cols-1 md:grid-cols-2 gap-6 md:max-w-4xl',
+    accent: 'orange',
+  },
+];
+
 export const OFFICIAL_PAYMENT_INFO = {
   upiId: 'abdulmalik4041977@okhdfcbank',
   accountInfo: 'Tamilnad Mercantile Bank 6781',
@@ -578,6 +627,10 @@ export const EVENTS_DATA: EventItem[] = [
     isActive: true,
   },
 ];
+
+export function getEventsByCategory(categoryId: EventCategoryId, events: EventItem[] = EVENTS_DATA) {
+  return events.filter((event) => event.category === categoryId);
+}
 
 export const TIMELINE_SCHEDULE = [
   {
