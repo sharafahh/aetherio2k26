@@ -69,8 +69,8 @@ export const SYMPOSIUM_METADATA = {
   teamSizeNote:
     "For specific games, look into the required members and decide what you want to join.",
   stats: [
-    { label: "Technical Events", value: "4", prefix: "" },
-    { label: "Non-Technical Events", value: "5", prefix: "" },
+    { label: "Technical Events", value: "5", prefix: "" },
+    { label: "Non-Technical Events", value: "4", prefix: "" },
     { label: "E-Sports Events", value: "2", prefix: "" },
     { label: "Per Person / Team 2–3", value: "₹150 / ₹300", prefix: "" },
   ]
@@ -127,12 +127,12 @@ export const EVENTS_DATA: EventItem[] = [
     id: 'black-box',
     slug: 'black-box',
     title: 'AI ESCAPE ROOM',
-    category: 'non-technical',
+    category: 'technical',
     tagline: 'Team-based AI puzzle-solving experience',
     shortDesc: 'Solve AI-based puzzles, clues, and challenges to escape before the allotted time expires.',
     fullDesc: 'AI Escape Room is a thrilling team-based AI puzzle-solving experience. Work together to solve AI-based puzzles, clues, and challenges to escape. Complete the challenge before the allotted time expires.',
     date: 'Sept 12, 2026',
-    time: '01:30 PM - 03:30 PM',
+    time: '10:30 AM - 11:15 AM',
     venue: 'Computing Hub A',
     fee: 100,
     teamSize: '2-3 Members',
@@ -586,6 +586,7 @@ export const TIMELINE_SCHEDULE = [
     items: [
       { time: "09:00 AM - 10:00 AM", title: "AETHERION'26 Symposium Name Reveal & Delegate Kit Distribution", venue: "Main Auditorium", category: "Special" },
       { time: "10:30 AM - 11:15 AM", title: "Neural Quest", venue: "Tech Hall 1", category: "Technical" },
+      { time: "10:30 AM - 11:15 AM", title: "AI Escape Room", venue: "Computing Hub A", category: "Technical" },
       { time: "10:45 AM - 11:45 AM", title: "PPT (Paper Presentation)", venue: "Conference Auditorium", category: "Technical" },
       { time: "10:45 AM - 11:45 AM", title: "AI Web Sprint", venue: "Design Studio Lab", category: "Technical" },
       { time: "11:45 AM - 12:30 PM", title: "Code Debugging", venue: "Computing Lab B", category: "Technical" },

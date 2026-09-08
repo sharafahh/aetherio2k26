@@ -193,7 +193,7 @@ export default function EventExplorer() {
           Explore All <span className="text-gradient">AETHERION Events</span>
         </h2>
         <p className="text-slate-200 text-sm sm:text-base mt-3 leading-relaxed">
-          Four technical arenas, five non-technical challenges, and two e-sports titles. ₹150 per person, or ₹300 for a team of 2–3. For specific games, look into the required members and decide what you want to join.
+          Five technical arenas, four non-technical challenges, and two e-sports titles. ₹150 per person, or ₹300 for a team of 2–3. For specific games, look into the required members and decide what you want to join.
         </p>
       </div>
 
