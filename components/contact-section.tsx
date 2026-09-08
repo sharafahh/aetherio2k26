@@ -67,7 +67,7 @@ export default function ContactSection() {
               <div>
                 <h4 className="text-xs uppercase font-mono text-slate-400 font-bold">Registration Pass</h4>
                 <p className="text-sm font-semibold text-white mt-0.5">{SYMPOSIUM_METADATA.pricingOffer}</p>
-                <p className="text-xs text-slate-500 mt-0.5">Instant online confirmation</p>
+                <p className="text-xs text-slate-500 mt-0.5">{SYMPOSIUM_METADATA.teamSizeNote}</p>
               </div>
             </div>
           </div>

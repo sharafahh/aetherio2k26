@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Award, CheckCircle2, Info } from 'lucide-react';
+import { Award, CheckCircle2, Info, Users } from 'lucide-react';
+import { SYMPOSIUM_METADATA } from '@/lib/data/events';
 
 export default function CertificateEligibilityNote({ className = '' }: { className?: string }) {
   return (
@@ -55,6 +56,18 @@ export default function CertificateEligibilityNote({ className = '' }: { classNa
           </span>
           <p className="text-[11px] text-slate-300 leading-relaxed">
             Official Certificate of Participation will be provided.
+          </p>
+        </div>
+      </div>
+
+      <div className="p-3.5 rounded-xl bg-red-950/20 border border-red-500/30 flex items-start gap-3">
+        <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 flex-shrink-0">
+          <Users className="w-4 h-4" />
+        </div>
+        <div>
+          <h5 className="text-xs font-bold text-white">Registration &amp; team size</h5>
+          <p className="text-[11px] text-slate-300 leading-relaxed mt-1">
+            {SYMPOSIUM_METADATA.pricingOffer}. {SYMPOSIUM_METADATA.teamSizeNote}
           </p>
         </div>
       </div>

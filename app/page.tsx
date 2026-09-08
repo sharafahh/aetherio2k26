@@ -56,7 +56,7 @@ export default function HomePage() {
           </p>
 
           <p className="mt-3 max-w-[820px] text-slate-200 text-xs sm:text-sm leading-relaxed">
-            Guided by the spirit of the dragon — <strong className="text-fire-red font-mono">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</strong> — the symposium offers high-stakes technical tracks, non-technical arenas, and e-sports under a single <strong className="text-fire-red">₹150 pass (covers All Events)</strong>.
+            Guided by the spirit of the dragon — <strong className="text-fire-red font-mono">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</strong> — the symposium offers high-stakes technical tracks, non-technical arenas, and e-sports. Registration is <strong className="text-fire-red">₹150 per person</strong>, or <strong className="text-fire-red">₹300 for a team of 2–3</strong>.
           </p>
 
           <div className="mt-10 grid w-full grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">

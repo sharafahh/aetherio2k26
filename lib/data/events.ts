@@ -65,14 +65,19 @@ export const SYMPOSIUM_METADATA = {
   venueMapUrl: "https://maps.app.goo.gl/KXEwRv9tYrupnzii9?g_st=aw",
   registrationUrl: GOOGLE_FORM_REGISTRATION_URL,
   email: "contact@aetherion26.org",
-  pricingOffer: "₹150 Flat Fee (For All Events)",
+  pricingOffer: "₹150 per person · ₹300 for a team of 2–3",
+  teamSizeNote:
+    "For specific games, look into the required members and decide what you want to join.",
   stats: [
     { label: "Technical Events", value: "4", prefix: "" },
     { label: "Non-Technical Events", value: "5", prefix: "" },
     { label: "E-Sports Events", value: "2", prefix: "" },
-    { label: "All-Event Pass", value: "₹150", prefix: "" },
+    { label: "Per Person / Team 2–3", value: "₹150 / ₹300", prefix: "" },
   ]
 };
+
+export const INDIVIDUAL_REGISTRATION_FEE = 150;
+export const TEAM_2_TO_3_REGISTRATION_FEE = 300;
 export const EVENTS_DATA: EventItem[] = [
   // --- TECHNICAL EVENTS ---
   {
@@ -630,7 +635,7 @@ export const RULES_SECTIONS = [
     title: 'Payment & UTR Verification Rules',
     rules: [
       'Scan the official symposium UPI QR Code and pay to: abdulmalik4041977@okhdfcbank.',
-      'Ensure the exact amount is paid corresponding to your chosen event.',
+      'Pay ₹150 per person, or ₹300 for a team of 2–3 people. For specific games, look into the required members and decide what you want to join.',
       'Accurately enter the 12-digit UTR / Transaction ID in the registration verification step.',
       'Upload a clear screenshot of the completed payment receipt showing the UTR and timestamp.',
       'Your registration will be marked as "Payment Verification Pending" until verified by the symposium finance team.',
@@ -644,11 +649,11 @@ export const FAQ_DATA = [
   },
   {
     question: "What is the symposium registration fee and how many events can I participate in?",
-    answer: "The symposium delegate registration pass is ₹150 flat per participant. This single ₹150 pass gives you full entry to participate in all events of your choice (Technical, Non-Technical, or E-Sports)."
+    answer: "Registration is ₹150 per person, or ₹300 for a team of 2–3 people. This pass gives you entry to participate in events of your choice (Technical, Non-Technical, or E-Sports). For specific games, look into the required members and decide what you want to join."
   },
   {
     question: "Can I participate in both Technical and Non-Technical events?",
-    answer: "Yes! Your ₹150 registration fee allows you to pick events across Technical and Non-Technical tracks, as long as their schedule timings do not directly conflict."
+    answer: "Yes! Your registration (₹150 per person, or ₹300 for a team of 2–3) allows you to pick events across Technical and Non-Technical tracks, as long as their schedule timings do not directly conflict. Check each game’s required member count before you join."
   },
   {
     question: "How do I make the registration payment?",

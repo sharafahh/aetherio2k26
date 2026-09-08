@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "AMSphere Presents AETHERION'26 | National Level Symposium",
-    description: "Convergence of Intelligence, Technology & Innovation. Register now for ₹150 (For All Events).",
+    description: "Convergence of Intelligence, Technology & Innovation. Register now — ₹150 per person, or ₹300 for a team of 2–3.",
     type: "website",
   },
 };
