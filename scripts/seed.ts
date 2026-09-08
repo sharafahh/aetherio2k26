@@ -23,7 +23,7 @@ const events = [
     shortDesc: 'Reverse Engineer the Unknown Code & Logic',
     category: 'technical',
     date: new Date('2026-09-12'),
-    time: '01:30 PM - 03:30 PM',
+    time: '10:30 AM - 11:15 AM',
     venue: 'Computing Hub A',
     coordinator: 'Malik (4th Year), Nafees & Karthik (2nd Year)',
     contact: 'contact@aetherion26.org',

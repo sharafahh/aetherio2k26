@@ -53,7 +53,7 @@ export default function FAQSection() {
               </button>
 
               {isOpen && (
-                <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/5">
+                <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/5 whitespace-pre-line">
                   {item.answer}
                 </div>
               )}
