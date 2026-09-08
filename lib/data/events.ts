@@ -666,9 +666,5 @@ export const FAQ_DATA = [
   {
     question: "Will all participants receive certificates?",
     answer: "Yes! All verified attendees will receive official AETHERION'26 Certificates of Participation, and winners will be awarded cash prizes, prestigious trophies, and Certificates of Excellence."
-  },
-  {
-    question: "Where will AETHERION'26 be held and is transportation/food provided?",
-    answer: "AETHERION'26 is held at [COLLEGE / INSTITUTION NAME] main campus. Refreshments and lunch are provided for all registered participants. Detailed directions and campus map links are available in our Contact section."
   }
 ];
