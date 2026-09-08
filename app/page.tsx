@@ -8,7 +8,6 @@ import ScheduleSection from '@/components/schedule-section';
 
 import RulesSection from '@/components/rules-section';
 import FAQSection from '@/components/faq-section';
-import ContactSection from '@/components/contact-section';
 import CustomCursor from '@/components/custom-cursor';
 import { SYMPOSIUM_METADATA } from '@/lib/data/events';
 import {
@@ -103,12 +102,7 @@ export default function HomePage() {
       <FAQSection />
 
       {/* ========================================================================= */}
-      {/* 9. CAMPUS MAP (enquiry form + contact directory removed) */}
-      {/* ========================================================================= */}
-      <ContactSection />
-
-      {/* ========================================================================= */}
-      {/* 10. SITE FOOTER — branding and in-page nav only (no enquiry / people contacts) */}
+      {/* SITE FOOTER — branding and in-page nav only */}
       {/* ========================================================================= */}
       <footer className="border-t border-red-500/20 bg-[#060203] py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
@@ -134,7 +128,6 @@ export default function HomePage() {
             <a href="#schedule" className="hover:text-red-400 transition-colors">Schedule</a>
             <a href="#rules" className="hover:text-red-400 transition-colors">Rules</a>
             <a href="#faq" className="hover:text-red-400 transition-colors">FAQ</a>
-            <a href="#contact" className="hover:text-red-400 transition-colors">Campus</a>
           </nav>
 
           <div className="text-center md:text-right">
