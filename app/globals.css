@@ -111,11 +111,11 @@
 
 .entry-pass-card {
   background: linear-gradient(135deg, rgba(230, 0, 26, 0.85), rgba(249, 115, 22, 0.55), rgba(230, 0, 26, 0.75));
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 28px rgba(230, 0, 26, 0.28);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45), 0 0 16px rgba(230, 0, 26, 0.22);
 }
 
 .entry-pass-card:hover {
-  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.62), 0 0 36px rgba(249, 115, 22, 0.4);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 20px rgba(249, 115, 22, 0.32);
 }
 
 .hero-register-btn:hover {
