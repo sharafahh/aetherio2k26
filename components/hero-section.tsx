@@ -23,10 +23,10 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.08 }}
-          className="font-sans text-6xl font-black uppercase tracking-[0.08em] text-white drop-shadow-[0_6px_32px_rgba(0,0,0,0.95),0_0_48px_rgba(230,0,26,0.65)] sm:text-8xl md:text-[9rem] md:leading-[0.9]"
+          className="mt-2 max-w-[16ch] px-4 font-sans text-5xl font-black uppercase tracking-tight text-white drop-shadow-[0_6px_32px_rgba(0,0,0,0.95),0_0_48px_rgba(230,0,26,0.65)] sm:text-6xl md:text-7xl md:leading-none lg:text-8xl"
         >
           AETHERION
-          <span className="text-fire-red font-sans text-4xl tracking-normal sm:text-6xl md:text-7xl">
+          <span className="text-fire-red font-sans text-3xl tracking-normal sm:text-4xl md:text-5xl lg:text-6xl">
             &apos;26
           </span>
         </motion.h1>
@@ -35,7 +35,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.2 }}
-          className="mt-6 max-w-[820px] text-sm leading-relaxed text-slate-100 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] sm:text-base md:text-lg"
+          className="mt-8 max-w-[820px] text-sm leading-relaxed text-slate-100 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] sm:text-base md:text-lg"
         >
           Proudly presented by <strong className="text-fire-red">AMSphere</strong>,{' '}
           <strong className="text-fire-red">AETHERION&apos;26</strong> is a national-scale flagship symposium
