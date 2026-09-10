@@ -587,20 +587,18 @@ export const TIMELINE_SCHEDULE = [
     day: "Day 1",
     label: "Symposium Itinerary",
     items: [
-      { time: "08:30 AM - 09:30 AM", title: "Grand Check-in, Delegate Kit Distribution & Breakfast", venue: "Central Foyer", category: "General" },
-      { time: "09:30 AM - 10:15 AM", title: "AMSphere Presents AETHERION'26 Inaugural Ceremony", venue: "Main Auditorium", category: "Keynote" },
-      { time: "11:00 AM - 11:45 AM", title: "PPT (Paper Presentation)", venue: "Conference Auditorium", category: "Technical" },
+      { time: "10:30 AM", title: "Name Reveal", venue: "Main Auditorium", category: "Special" },
       { time: "11:00 AM - 11:45 AM", title: "Neural Quest", venue: "Tech Hall 1", category: "Technical" },
+      { time: "11:00 AM - 11:45 AM", title: "PPT (Paper Presentation)", venue: "Conference Auditorium", category: "Technical" },
       { time: "12:00 PM - 12:45 PM", title: "AI Escape Room: Reverse Engineering Contest", venue: "Computing Hub A", category: "Technical" },
       { time: "12:00 PM - 12:45 PM", title: "UI/UX Designathon: High-Fidelity Sprint", venue: "Design Studio Lab", category: "Technical" },
       { time: "12:00 PM - 12:45 PM", title: "Reverse Engineering (Code Debugging)", venue: "Computing Lab B", category: "Technical" },
-      { time: "12:45 PM - 01:30 PM", title: "Networking & Buffet Lunch Break", venue: "Dining Pavilion", category: "General" },
+      { time: "12:45 PM - 01:30 PM", title: "Lunch Break", venue: "Dining Pavilion", category: "General" },
       { time: "01:30 PM - 02:15 PM", title: "Film Hunt: Mystery Clue Trail", venue: "Campus Quad & Media Lab", category: "Non-Technical" },
       { time: "01:30 PM - 03:30 PM", title: "E-Sports: Free Fire & E-Football Tournaments", venue: "E-Sports Arena", category: "Non-Technical" },
       { time: "02:20 PM - 03:00 PM", title: "Voice & Noise Auditory & Foley Showdown", venue: "Acoustic Stage", category: "Non-Technical" },
       { time: "03:10 PM - 04:00 PM", title: "Creative Quest", venue: "Design Studio & Creative Hub", category: "Non-Technical" },
       { time: "03:10 PM - 04:00 PM", title: "Wrong Answers Only", venue: "Open Amphitheatre", category: "Non-Technical" },
-      { time: "05:00 PM - 06:00 PM", title: "Valedictory, Grand Award Ceremony & Cash Prize Distribution", venue: "Main Auditorium", category: "General" },
     ]
   }
 ];
