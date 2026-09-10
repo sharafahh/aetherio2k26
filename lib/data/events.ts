@@ -77,7 +77,8 @@ export const SYMPOSIUM_METADATA = {
   stats: [
     { label: "Technical Events", value: "5", prefix: "" },
     { label: "Non-Technical Events", value: "5", prefix: "" },
-    { label: "Live Arenas", value: "11", prefix: "" },
+    { label: "Total Events", value: "10", prefix: "" },
+    { label: "Solo / Team Pass", value: PRICING_SHORT, prefix: "" },
   ]
 };
 export const EVENTS_DATA: EventItem[] = [
