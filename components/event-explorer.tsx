@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import { motion } from 'framer-motion';
 import { EventItem, EVENTS_DATA } from '@/lib/data/events';
 import EventModal from './event-modal';
-import Link from 'next/link';
 import {
   Search,
   Cpu,
@@ -15,12 +15,10 @@ import {
   Mic2,
   Dumbbell,
   Sparkles,
-  ArrowUpRight,
   Clock,
   MapPin,
   Users,
-  Shield,
-  Layers,
+  IndianRupee,
   ChevronRight,
   Flame
 } from 'lucide-react';
@@ -36,6 +34,144 @@ const iconMap: Record<string, React.ReactNode> = {
   Dumbbell: <Dumbbell className="w-5 h-5" />,
   Sparkles: <Sparkles className="w-5 h-5" />,
 };
+
+const CATEGORY_LABEL: Record<EventItem['category'], string> = {
+  technical: 'Technical',
+  'non-technical': 'Non-Technical',
+  'e-sports': 'E-Sports',
+};
+
+function EventShowcaseCard({
+  event,
+  index,
+  onOpen,
+}: {
+  event: EventItem;
+  index: number;
+  onOpen: (event: EventItem) => void;
+}) {
+  const isTechnical = event.category === 'technical';
+  const isEsports = event.category === 'e-sports';
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.45, delay: index * 0.1, ease: 'easeOut' }}
+      whileHover={{ y: -8, scale: 1.02 }}
+      className={`event-card-shell group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border p-6 ${
+        isTechnical
+          ? 'border-red-500/25 hover:border-red-400/70 hover:shadow-[0_16px_40px_-12px_rgba(230,0,26,0.45)]'
+          : isEsports
+          ? 'border-orange-500/25 hover:border-orange-400/70 hover:shadow-[0_16px_40px_-12px_rgba(249,115,22,0.4)]'
+          : 'border-amber-500/20 hover:border-amber-400/60 hover:shadow-[0_16px_40px_-12px_rgba(245,158,11,0.35)]'
+      }`}
+    >
+      <div
+        className={`pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full blur-3xl transition-opacity duration-300 group-hover:opacity-100 ${
+          isTechnical ? 'bg-red-600/20 opacity-60' : 'bg-orange-500/20 opacity-50'
+        }`}
+      />
+
+      <div className="relative">
+        <div className="mb-4 flex items-center justify-between">
+          <div
+            className={`flex h-11 w-11 items-center justify-center rounded-xl border transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${
+              isTechnical
+                ? 'border-red-500/30 bg-red-500/15 text-red-300'
+                : isEsports
+                ? 'border-orange-500/30 bg-orange-500/15 text-orange-300'
+                : 'border-amber-500/30 bg-amber-500/15 text-amber-300'
+            }`}
+          >
+            {iconMap[event.iconName] || <Flame className="w-5 h-5" />}
+          </div>
+          <span
+            className={`rounded-full border px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider ${
+              isTechnical
+                ? 'border-red-500/30 bg-red-500/10 text-red-200'
+                : isEsports
+                ? 'border-orange-500/30 bg-orange-500/10 text-orange-200'
+                : 'border-amber-500/30 bg-amber-500/10 text-amber-200'
+            }`}
+          >
+            {CATEGORY_LABEL[event.category]}
+          </span>
+        </div>
+
+        <h3 className="text-xl font-black tracking-wide text-white transition-colors group-hover:text-red-200">
+          {event.title}
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed text-slate-200 line-clamp-3">
+          {event.shortDesc}
+        </p>
+
+        <div className="mt-5 grid grid-cols-1 gap-2.5 border-t border-white/10 pt-4 text-[12px] text-slate-200 sm:grid-cols-2">
+          <div className="flex items-center gap-1.5">
+            <Clock className="h-3.5 w-3.5 shrink-0 text-red-400" />
+            <span>{event.time}</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <MapPin className="h-3.5 w-3.5 shrink-0 text-orange-400" />
+            <span>{event.venue}</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <Users className="h-3.5 w-3.5 shrink-0 text-red-300" />
+            <span>{event.teamSize}</span>
+          </div>
+          <div className="flex items-center gap-1.5 font-bold text-white">
+            <IndianRupee className="h-3.5 w-3.5 shrink-0 text-orange-300" />
+            <span>₹150 / ₹300 Pass</span>
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        onClick={() => onOpen(event)}
+        className="relative mt-5 flex w-full items-center justify-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.05] py-2.5 px-3 text-xs font-semibold text-white transition-colors hover:border-red-400/40 hover:bg-white/[0.09]"
+      >
+        <span>View Details</span>
+        <ChevronRight className="h-3.5 w-3.5 text-red-400" />
+      </button>
+    </motion.article>
+  );
+}
+
+function EventSection({
+  title,
+  countLabel,
+  events,
+  gridClass,
+  onOpen,
+}: {
+  title: string;
+  countLabel: string;
+  events: EventItem[];
+  gridClass: string;
+  onOpen: (event: EventItem) => void;
+}) {
+  if (events.length === 0) return null;
+
+  return (
+    <div className="space-y-6">
+      <div className="flex flex-col items-start justify-between gap-2 border-b border-red-500/20 pb-3 sm:flex-row sm:items-end">
+        <div>
+          <h3 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{title}</h3>
+          <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-orange-200">
+            {countLabel}
+          </p>
+        </div>
+      </div>
+      <div className={gridClass}>
+        {events.map((event, index) => (
+          <EventShowcaseCard key={event.id} event={event} index={index} onOpen={onOpen} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function EventExplorer() {
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'technical' | 'non-technical' | 'e-sports'>('all');
@@ -61,29 +197,29 @@ export default function EventExplorer() {
     });
   }, [selectedCategory, searchQuery]);
 
+  const technicalEvents = filteredEvents.filter((e) => e.category === 'technical');
+  const nonTechnicalEvents = filteredEvents.filter((e) => e.category === 'non-technical');
+  const esportsEvents = filteredEvents.filter((e) => e.category === 'e-sports');
+
   return (
     <div id="events" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      {/* Background Section Glows */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-red-600/10 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-10 -right-20 w-96 h-96 bg-orange-600/10 rounded-full blur-[130px] pointer-events-none" />
 
-      {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-mono text-red-400 mb-4">
-          <Flame className="w-3.5 h-3.5 text-orange-500" />
-          <span>COMPETITIVE ARENAS • ₹150 FOR ALL EVENTS</span>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-mono text-red-300 mb-4">
+          <Flame className="w-3.5 h-3.5 text-orange-400" />
+          <span>11 ARENAS • ₹150 SOLO · ₹300 TEAM (2–3)</span>
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
           Explore All <span className="text-gradient">AETHERION Events</span>
         </h2>
-        <p className="text-slate-400 text-sm sm:text-base mt-3 leading-relaxed">
-          From algorithmic reverse engineering and UI designathons to battle royale gaming and creative challenges.
+        <p className="text-slate-200 text-sm sm:text-base mt-3 leading-relaxed">
+          Four technical arenas, five non-technical challenges, and two e-sports titles — all included. ₹150 for one person, ₹300 for a team of 2–3.
         </p>
       </div>
 
-      {/* Control Bar: Category Switcher & Instant Search */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
-        {/* Category Switcher Tabs */}
         <div className="flex items-center p-1 rounded-xl bg-surface border border-border shadow-inner w-full md:w-auto overflow-x-auto">
           {[
             { id: 'all', label: 'All Tracks' },
@@ -93,11 +229,11 @@ export default function EventExplorer() {
           ].map((cat) => (
             <button
               key={cat.id}
-              onClick={() => setSelectedCategory(cat.id as any)}
+              onClick={() => setSelectedCategory(cat.id as typeof selectedCategory)}
               className={`px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap ${
                 selectedCategory === cat.id
                   ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white shadow-[0_0_15px_rgba(230,0,26,0.4)]'
-                  : 'text-slate-400 hover:text-slate-200'
+                  : 'text-slate-200 hover:text-white'
               }`}
             >
               {cat.label}
@@ -105,20 +241,19 @@ export default function EventExplorer() {
           ))}
         </div>
 
-        {/* Search Input */}
         <div className="relative w-full md:w-72">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-slate-300 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search events, topics, coordinators..."
-            className="w-full pl-10 pr-4 py-2.5 bg-surface border border-border rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500/60 focus:ring-1 focus:ring-red-500/40 transition-all"
+            className="w-full pl-10 pr-4 py-2.5 bg-surface border border-border rounded-xl text-xs text-white placeholder-slate-400 focus:outline-none focus:border-red-500/60 focus:ring-1 focus:ring-red-500/40 transition-all"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-300 hover:text-white"
             >
               Clear
             </button>
@@ -126,116 +261,45 @@ export default function EventExplorer() {
         </div>
       </div>
 
-      {/* Events Grid */}
       {filteredEvents.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredEvents.map((event) => {
-            const isTechnical = event.category === 'technical';
-            return (
-              <div
-                key={event.id}
-                className="group relative flex flex-col justify-between rounded-2xl bg-surface border border-border p-6 transition-all duration-300 hover:border-red-500/50 hover:shadow-[0_10px_35px_-10px_rgba(0,0,0,0.9),0_0_25px_rgba(230,0,26,0.25)] hover:-translate-y-1"
-              >
-                <div>
-                  {/* Top Badge & Icon */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div
-                      className={`w-11 h-11 rounded-xl flex items-center justify-center border transition-colors ${
-                        isTechnical
-                          ? 'bg-red-500/15 border-red-500/30 text-red-400 group-hover:bg-red-500/25 group-hover:border-red-400 shadow-[0_0_15px_rgba(230,0,26,0.2)]'
-                          : 'bg-orange-500/15 border-orange-500/30 text-orange-400 group-hover:bg-orange-500/25 group-hover:border-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.2)]'
-                      }`}
-                    >
-                      {iconMap[event.iconName] || <Flame className="w-5 h-5" />}
-                    </div>
-
-                    <div className="flex items-center gap-1.5">
-                      <span
-                        className={`text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full border ${
-                          isTechnical
-                            ? 'bg-red-500/10 text-red-300 border-red-500/25'
-                            : 'bg-orange-500/10 text-orange-300 border-orange-500/25'
-                        }`}
-                      >
-                        {event.category}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Title & Tagline */}
-                  <h3 className="text-xl font-bold text-white tracking-wide group-hover:text-red-300 transition-colors">
-                    {event.title}
-                  </h3>
-                  <p className="text-xs text-red-400/80 font-mono mt-1 mb-3">{event.tagline}</p>
-
-                  <p className="text-xs text-slate-300 leading-relaxed line-clamp-3 mb-6">
-                    {event.shortDesc}
-                  </p>
-
-                  {/* Sub-events for E-Sports preview */}
-                  {event.subEvents && (
-                    <div className="mb-4 p-2.5 rounded-lg bg-white/[0.02] border border-white/5 space-y-1">
-                      <span className="text-[10px] uppercase font-mono text-red-400 block font-semibold">Included Titles:</span>
-                      <div className="flex gap-2">
-                        {event.subEvents.map(s => (
-                          <span key={s.id} className="text-[11px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-300">
-                            {s.name}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Metadata Chips */}
-                  <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-400 border-t border-border pt-4 mb-6">
-                    <div className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-red-400" />
-                      <span>{event.time}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-orange-400" />
-                      <span>{event.venue}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <Users className="w-3.5 h-3.5 text-red-300" />
-                      <span>{event.teamSize}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 font-mono text-red-300 font-bold">
-                      <span>Pass: ₹150 for All</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card Actions */}
-                <div className="pt-2">
-                  <button
-                    onClick={() => setSelectedEvent(event)}
-                    className="w-full py-2.5 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs font-semibold text-slate-200 transition-colors flex items-center justify-center gap-1.5"
-                  >
-                    <span>View Rules & Details</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-red-400" />
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+        <div className="space-y-16">
+          <EventSection
+            title="Technical Events"
+            countLabel={`${technicalEvents.length} events`}
+            events={technicalEvents}
+            gridClass="grid grid-cols-1 md:grid-cols-2 gap-6"
+            onOpen={setSelectedEvent}
+          />
+          <EventSection
+            title="Non-Technical Events"
+            countLabel={`${nonTechnicalEvents.length} events`}
+            events={nonTechnicalEvents}
+            gridClass="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            onOpen={setSelectedEvent}
+          />
+          <EventSection
+            title="E-Sports"
+            countLabel={`${esportsEvents.length} events`}
+            events={esportsEvents}
+            gridClass="grid grid-cols-1 md:grid-cols-2 gap-6 md:max-w-4xl"
+            onOpen={setSelectedEvent}
+          />
         </div>
       ) : (
         <div className="text-center py-16 bg-surface border border-border rounded-2xl max-w-md mx-auto">
-          <p className="text-slate-400 text-sm">No events found matching your search query.</p>
+          <p className="text-slate-200 text-sm">No events found matching your search query.</p>
           <button
             onClick={() => {
               setSelectedCategory('all');
               setSearchQuery('');
             }}
-            className="mt-4 text-xs font-mono text-red-400 hover:underline"
+            className="mt-4 text-xs font-mono text-red-300 hover:underline"
           >
             Reset Filters
           </button>
         </div>
       )}
 
-      {/* Event Details Modal */}
       <EventModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
     </div>
   );

@@ -1,6 +1,3 @@
-import { only } from "node:test";
-import { add, or } from "three/src/nodes/math/OperatorNode.js";
-
 export interface Coordinator {
   name: string;
   year: '4th Year' | '2nd Year' | '3rd Year' | 'Faculty' | 'Staff';
@@ -58,20 +55,30 @@ export const OFFICIAL_PAYMENT_INFO = {
 
 export const GOOGLE_FORM_REGISTRATION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdCrqKNRWyz6w1rYWcoR_1etYfvPkYTo7Vys_ORtFHhhfusYA/viewform?usp=preview";
 
+export const REGISTRATION_PRICING = {
+  solo: { amount: 150, label: "One person" },
+  team: { amount: 300, label: "Team of 2–3" },
+} as const;
+
+export const PRICING_SHORT = "₹150 / ₹300";
+export const PRICING_DETAIL = "₹150 for one person · ₹300 for a team of 2–3";
+
 export const SYMPOSIUM_METADATA = {
   name: "AETHERION'26",
   presenter: "AMSphere",
   tagline: "Convergence of Intelligence, Technology & Innovation",
   institution: "AMS COLLEGE OF ENGINEERING",
-  date: "Sept 12, 2026",
+  date: "12th September 2026",
   venue: "AMS COLLEGE OF ENGINEERING",
   venueMapUrl: "https://maps.app.goo.gl/KXEwRv9tYrupnzii9?g_st=aw",
   registrationUrl: GOOGLE_FORM_REGISTRATION_URL,
   email: "contact@aetherion26.org",
-  pricingOffer: "₹150 Flat Fee (For All Events)",
+  pricingOffer: PRICING_DETAIL,
   stats: [
-    { label: "Technical & Non-Tech Events", value: "8+", prefix: "" },
-    { label: "Pass Fee (All Events)", value: "₹150", prefix: "" },
+    { label: "Technical Events", value: "4", prefix: "" },
+    { label: "Non-Technical Events", value: "5", prefix: "" },
+    { label: "E-Sports Events", value: "2", prefix: "" },
+    { label: "Solo / Team Pass", value: PRICING_SHORT, prefix: "" },
   ]
 };
 export const EVENTS_DATA: EventItem[] = [
@@ -85,7 +92,7 @@ export const EVENTS_DATA: EventItem[] = [
     shortDesc: 'A 4-round event testing your AI knowledge, observation, and creativity. Think smart, spot the AI, and prompt like a pro!',
     fullDesc: 'NEURAL QUEST is a 4-round event testing your AI knowledge, observation, and creativity. From identifying AI slides to quick-fire MCQs, spotting AI-generated images, and crafting the best tech prompts, this event will push your boundaries. Think smart. Spot the AI. Prompt like a pro. The team with the highest score wins NEURAL QUEST!!!',
     date: 'Sept 12, 2026',
-    time: '10:00 AM - 12:30 PM',
+    time: '10:30 AM - 11:15 AM',
     venue: 'Tech Hall 1',
     fee: 100,
     teamSize: '2 Members',
@@ -123,7 +130,7 @@ export const EVENTS_DATA: EventItem[] = [
     id: 'black-box',
     slug: 'black-box',
     title: 'AI ESCAPE ROOM',
-    category: 'technical',
+    category: 'non-technical',
     tagline: 'Team-based AI puzzle-solving experience',
     shortDesc: 'Solve AI-based puzzles, clues, and challenges to escape before the allotted time expires.',
     fullDesc: 'AI Escape Room is a thrilling team-based AI puzzle-solving experience. Work together to solve AI-based puzzles, clues, and challenges to escape. Complete the challenge before the allotted time expires.',
@@ -173,7 +180,7 @@ export const EVENTS_DATA: EventItem[] = [
     shortDesc: 'Present your visionary technical papers, research publications, or novel engineering ideas before an esteemed panel of experts.',
     fullDesc: 'PPT (Paper Presentation)\n\nRules and Regulations:\n• The presentation should be based on one of the provided subjects.\n• Participants should be prepared and thorough with their chosen subject.\n\nTopics:\n1. The Future of Humans and AI\n2. The Hidden AI Around Us\n3. AI Powered Medical Diagnosis\n4. The Rise of Intelligence Machines\n5. Neural Revolution',
     date: 'Sept 12, 2026',
-    time: '10:30 AM - 01:00 PM',
+    time: '10:45 AM - 11:45 AM',
     venue: 'Conference Auditorium',
     fee: 150,
     teamSize: '1-3 Members',
@@ -215,7 +222,7 @@ export const EVENTS_DATA: EventItem[] = [
     shortDesc: 'Participants receive a problem statement and must create the best frontend website using AI tools within the given time limit.',
     fullDesc: 'Team Size: 2–4 Members\n\nObjective:\nParticipants receive a problem statement and must create the best frontend website using AI tools within the given time limit.\n\nTime Limit: 20 Minutes\n\nFocus:\nAI-powered frontend development, creativity, UI design, problem solving and speed.',
     date: 'Sept 12, 2026',
-    time: '11:00 AM - 02:00 PM',
+    time: '10:45 AM - 11:45 AM',
     venue: 'Design Studio Lab',
     fee: 100,
     teamSize: '2-4 Members',
@@ -263,7 +270,7 @@ export const EVENTS_DATA: EventItem[] = [
     shortDesc: 'Individual Format. Participants receive a program with intentional errors and must fix as many bugs as possible within the time limit without internet or AI tools.',
     fullDesc: 'Individual Format: Each participant competes individually.\n\nParticipants will receive a program containing intentional errors. Participants must fix as many errors as possible within the given time.\n\nNo internet, AI tools, or external assistance allowed.\n\nFIND THE BUG:\nIdentify syntax, spelling, capitalization, brackets, and keyword errors. Carefully inspect the given code and locate the bugs.\n\nFIX THE CODE:\nCorrect the identified errors without changing the intended program. Speed and accuracy will determine the score.\n\nWINNER:\nThe participant who fixes the most errors in the shortest time will be declared the winner.\n\n“One Code. Many Bugs. One Winner!”',
     date: 'Sept 12, 2026',
-    time: '10:30 AM - 12:30 PM',
+    time: '11:45 AM - 12:30 PM',
     venue: 'Computing Lab B',
     fee: 100,
     teamSize: 'Solo (1 Player)',
@@ -580,31 +587,16 @@ export const TIMELINE_SCHEDULE = [
     day: "Day 1",
     label: "Symposium Itinerary",
     items: [
-      { time: "08:30 AM - 09:30 AM", title: "Grand Check-in, Delegate Kit Distribution & Breakfast", venue: "Central Foyer", category: "General" },
-      { time: "09:30 AM - 10:15 AM", title: "AMSphere Presents AETHERION'26 Inaugural Ceremony", venue: "Main Auditorium", category: "Keynote" },
-      { time: "10:15 AM - 12:30 PM", title: "PPT (Paper Presentation)", venue: "Conference Auditorium", category: "Technical" },
-      { time: "10:30 AM - 12:30 PM", title: "Neural Quest", venue: "Tech Hall 1", category: "Technical" },
-      { time: "10:30 AM - 01:30 PM", title: "E-Sports: Free Fire & E-Football Tournaments", venue: "E-Sports Arena", category: "Non-Technical" },
-      { time: "10:30 AM - 12:30 PM", title: "Reverse Engineering (Code Debugging)", venue: "Computing Lab B", category: "Technical" },
-      { time: "11:00 AM - 01:30 PM", title: "UI/UX Designathon: High-Fidelity Sprint", venue: "Design Studio Lab", category: "Technical" },
-      { time: "11:30 AM - 01:00 PM", title: "Film Hunt: Mystery Clue Trail", venue: "Campus Quad & Media Lab", category: "Non-Technical" },
-      { time: "01:00 PM - 02:00 PM", title: "Networking & Buffet Lunch Break", venue: "Dining Pavilion", category: "General" },
-      { time: "02:00 PM - 04:00 PM", title: "AI Escape Room: Reverse Engineering Contest", venue: "Computing Hub A", category: "Technical" },
-      { time: "02:00 PM - 03:30 PM", title: "Voice & Noise Auditory & Foley Showdown", venue: "Acoustic Stage", category: "Non-Technical" },
-      { time: "05:00 PM - 06:00 PM", title: "Valedictory, Grand Award Ceremony & Cash Prize Distribution", venue: "Main Auditorium", category: "General" },
+      { time: "09:00 AM - 10:00 AM", title: "AETHERION'26 Symposium Name Reveal & Delegate Kit Distribution", venue: "Main Auditorium", category: "Special" },
+      { time: "10:30 AM - 11:15 AM", title: "Neural Quest", venue: "Tech Hall 1", category: "Technical" },
+      { time: "10:45 AM - 11:45 AM", title: "PPT (Paper Presentation)", venue: "Conference Auditorium", category: "Technical" },
+      { time: "10:45 AM - 11:45 AM", title: "AI Web Sprint", venue: "Design Studio Lab", category: "Technical" },
+      { time: "11:45 AM - 12:30 PM", title: "Code Debugging", venue: "Computing Lab B", category: "Technical" },
+      { time: "12:30 PM - 01:30 PM", title: "Lunch Distribution for All Participants", venue: "Dining Pavilion", category: "General" },
     ]
   }
 ];
 export const RULES_SECTIONS = [
-  {
-    id: 'certificate-rules',
-    title: '📌 NOTE – Certificate Eligibility',
-    rules: [
-      '💻 Technical Event Only: Certificate will be provided.',
-      '🎯 Non-Technical Event Only: No certificate will be provided.',
-      '🏆 Both Technical + Non-Technical Events: Certificate will be provided.',
-    ]
-  },
   {
     id: 'general-rules',
     title: 'General Symposium Guidelines',
@@ -655,11 +647,11 @@ export const FAQ_DATA = [
   },
   {
     question: "What is the symposium registration fee and how many events can I participate in?",
-    answer: "The symposium delegate registration pass is ₹150 flat per participant. This single ₹150 pass gives you full entry to participate in all events of your choice (Technical, Non-Technical, or E-Sports)."
+    answer: "Registration is ₹150 for one person and ₹300 for a team of 2–3 people. Either pass covers entry to all events of your choice (Technical, Non-Technical, or E-Sports)."
   },
   {
     question: "Can I participate in both Technical and Non-Technical events?",
-    answer: "Yes! Your ₹150 registration fee allows you to pick events across Technical and Non-Technical tracks, as long as their schedule timings do not directly conflict."
+    answer: "Yes! Your registration pass (₹150 solo or ₹300 for a team of 2–3) allows you to pick events across Technical and Non-Technical tracks, as long as their schedule timings do not directly conflict."
   },
   {
     question: "How do I make the registration payment?",
