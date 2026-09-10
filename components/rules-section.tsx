@@ -15,9 +15,6 @@ export default function RulesSection() {
 
   return (
     <section id="rules" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-8">
-      {/* Certificate Eligibility Banner */}
-      <CertificateEligibilityNote />
-
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto mb-12">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-mono text-red-400 mb-4">
@@ -31,6 +28,8 @@ export default function RulesSection() {
           Transparent guidelines for participation, submission standards, discipline, and awards.
         </p>
       </div>
+
+      <CertificateEligibilityNote />
 
       {/* Accordion List */}
       <div className="space-y-4">

@@ -85,7 +85,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
             </div>
             <div className="flex items-center gap-2 text-slate-300">
               <Trophy className="w-4 h-4 text-amber-400 flex-shrink-0" />
-              <span>Pass: ₹150 for All</span>
+              <span>₹150 / person · ₹300 team (2–3)</span>
             </div>
           </div>
         </div>
@@ -264,7 +264,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
           <div>
             <span className="text-xs text-slate-400 block">Symposium Delegate Pass</span>
             <span className="text-lg font-bold font-mono text-red-400">
-              ₹150 <span className="text-xs text-slate-400 font-normal">(For All Events)</span>
+              ₹150 / ₹300 <span className="text-xs text-slate-400 font-normal">(person / team of 2–3)</span>
             </span>
           </div>
 
@@ -281,7 +281,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
               rel="noopener noreferrer"
               className="flex-1 sm:flex-initial flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white text-xs font-bold px-6 py-2.5 rounded-lg shadow-[0_0_20px_rgba(230,0,26,0.4)] transition-all"
             >
-              <span>REGISTER (₹150 FOR ALL)</span>
+              <span>REGISTER (₹150 / ₹300)</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

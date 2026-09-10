@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import CertificateModalPopup from '@/components/certificate-modal-popup';
-import FemaleOfferFloatingWidget from '@/components/female-offer-widget';
 
 export const metadata: Metadata = {
   title: "AMSphere Presents AETHERION'26 | Convergence of Intelligence, Technology & Innovation",
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "AMSphere Presents AETHERION'26 | National Level Symposium",
-    description: "Convergence of Intelligence, Technology & Innovation. Register now for ₹150 (For All Events).",
+    description: "Convergence of Intelligence, Technology & Innovation. Register now — ₹150 per person, or ₹300 for a team of 2–3.",
     type: "website",
   },
 };
@@ -37,7 +36,6 @@ export default function RootLayout({
         <Providers>
           {children}
           <CertificateModalPopup />
-          <FemaleOfferFloatingWidget />
         </Providers>
       </body>
     </html>
