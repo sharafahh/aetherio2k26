@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useMemo, useCallback, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useMemo } from 'react';
+import { motion } from 'framer-motion';
 import { EventItem, EVENTS_DATA } from '@/lib/data/events';
 import EventModal from './event-modal';
 import {
@@ -129,87 +129,18 @@ function EventShowcaseCard({
   );
 }
 
-function SwappingCardGrid({ events, onOpen }: { events: EventItem[]; onOpen: (event: EventItem) => void }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const next = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % events.length);
-  }, [events.length]);
-
-  useEffect(() => {
-    if (events.length <= 1) return;
-    const timer = setInterval(next, 4000);
-    return () => clearInterval(timer);
-  }, [events.length, next]);
-
-  const total = events.length;
-  const visible = events.slice(0, 5);
-
-  return (
-    <div className="relative flex justify-center items-center h-[420px] sm:h-[460px]">
-      <AnimatePresence initial={false} custom={currentIndex}>
-        {visible.map((event, idx) => {
-          let offset = idx - currentIndex;
-          if (offset > total / 2) offset -= total;
-          if (offset < -total / 2) offset += total;
-
-          const absOffset = Math.abs(offset);
-          const zIndex = total - absOffset;
-          const x = offset * 260;
-          const rotateY = offset * -8;
-          const opacity = absOffset === 0 ? 1 : absOffset === 1 ? 0.75 : 0.5;
-          const scale = absOffset === 0 ? 1 : 0.9;
-
-          return (
-            <motion.div
-              key={event.id}
-              className="absolute w-[85vw] max-w-sm sm:max-w-md"
-              style={{ zIndex }}
-              animate={{ x, rotateY, opacity, scale }}
-              transition={{
-                type: 'spring',
-                stiffness: 260,
-                damping: 22,
-                mass: 0.8,
-              }}
-            >
-              <EventShowcaseCard event={event} index={idx} onOpen={onOpen} />
-            </motion.div>
-          );
-        })}
-      </AnimatePresence>
-    </div>
-  );
-}
-
 function EventSection({
   title,
   countLabel,
   events,
   onOpen,
-  useSwapping = false,
 }: {
   title: string;
   countLabel: string;
   events: EventItem[];
   onOpen: (event: EventItem) => void;
-  useSwapping?: boolean;
 }) {
   if (events.length === 0) return null;
-
-  if (useSwapping) {
-    return (
-      <div className="space-y-6">
-        <div className="text-center">
-          <h3 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{title}</h3>
-          <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-orange-200">
-            {countLabel}
-          </p>
-        </div>
-        <SwappingCardGrid events={events} onOpen={onOpen} />
-      </div>
-    );
-  }
 
   return (
     <div className="space-y-6">
@@ -321,14 +252,12 @@ export default function EventExplorer() {
             title="Technical Events"
             countLabel={`${technicalEvents.length} events`}
             events={technicalEvents}
-            useSwapping
             onOpen={setSelectedEvent}
           />
           <EventSection
             title="Non-Technical Events"
             countLabel={`${nonTechnicalEvents.length} events`}
             events={nonTechnicalEvents}
-            useSwapping
             onOpen={setSelectedEvent}
           />
         </div>
