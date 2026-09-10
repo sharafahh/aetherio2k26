@@ -9,8 +9,6 @@ import CountdownTimer from './countdown-timer';
 export default function HeroSection() {
   return (
     <section className="relative z-20 flex min-h-[100svh] w-full items-center justify-center overflow-hidden px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8">
-      <div className="hero-readability-overlay pointer-events-none absolute inset-0 z-0" aria-hidden="true" />
-
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center text-center">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
