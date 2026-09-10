@@ -43,7 +43,7 @@ export default function HomePage() {
       <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-red-500/10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-mono text-red-300">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-mono text-red-400">
               <Layers className="w-3.5 h-3.5" />
               <span>THE VISION OF AETHERION</span>
             </div>
@@ -57,7 +57,7 @@ export default function HomePage() {
             </p>
 
             <p className="text-slate-200 text-xs sm:text-sm leading-relaxed">
-              Guided by the spirit of the dragon — <strong className="text-white font-mono">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</strong> — the symposium offers high-stakes technical tracks, non-technical arenas, and e-sports under one pass: <strong className="text-red-300">₹150 for one person, ₹300 for a team of 2–3</strong>.
+              Guided by the spirit of the dragon — <strong className="text-white font-mono">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</strong> — the symposium offers high-stakes technical tracks and non-technical arenas under one pass: <strong className="text-red-300">₹150 for one person, ₹300 for a team of 2–3</strong>.
             </p>
           </div>
 
@@ -106,7 +106,7 @@ export default function HomePage() {
       <FAQSection />
 
       {/* ========================================================================= */}
-      {/* 9. CONTACT & CAMPUS PORTAL */}
+      {/* 9. COORDINATORS CONTACT */}
       {/* ========================================================================= */}
       <ContactSection />
 
@@ -137,7 +137,7 @@ export default function HomePage() {
             <a href="#schedule" className="hover:text-red-400 transition-colors">Schedule</a>
             <a href="#rules" className="hover:text-red-400 transition-colors">Rules</a>
             <a href="#faq" className="hover:text-red-400 transition-colors">FAQ</a>
-            <a href="#contact" className="hover:text-red-400 transition-colors">Contact</a>
+            <a href="#coordinators" className="hover:text-red-400 transition-colors">Coordinators</a>
           </div>
 
           <div className="text-center md:text-right">

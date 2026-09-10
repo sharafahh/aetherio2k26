@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { EventItem, EVENTS_DATA } from '@/lib/data/events';
 import EventModal from './event-modal';
 import {
@@ -10,17 +10,16 @@ import {
   Terminal,
   Presentation,
   Palette,
-  Gamepad2,
   Film,
   Mic2,
-  Dumbbell,
   Sparkles,
   Clock,
   MapPin,
   Users,
   IndianRupee,
   ChevronRight,
-  Flame
+  Flame,
+  Gamepad2,
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -31,14 +30,12 @@ const iconMap: Record<string, React.ReactNode> = {
   Gamepad2: <Gamepad2 className="w-5 h-5" />,
   Film: <Film className="w-5 h-5" />,
   Mic2: <Mic2 className="w-5 h-5" />,
-  Dumbbell: <Dumbbell className="w-5 h-5" />,
   Sparkles: <Sparkles className="w-5 h-5" />,
 };
 
-const CATEGORY_LABEL: Record<EventItem['category'], string> = {
+const CATEGORY_LABEL: Record<string, string> = {
   technical: 'Technical',
   'non-technical': 'Non-Technical',
-  'e-sports': 'E-Sports',
 };
 
 function EventShowcaseCard({
@@ -51,7 +48,6 @@ function EventShowcaseCard({
   onOpen: (event: EventItem) => void;
 }) {
   const isTechnical = event.category === 'technical';
-  const isEsports = event.category === 'e-sports';
 
   return (
     <motion.article
@@ -63,8 +59,6 @@ function EventShowcaseCard({
       className={`event-card-shell group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border p-6 ${
         isTechnical
           ? 'border-red-500/25 hover:border-red-400/70 hover:shadow-[0_16px_40px_-12px_rgba(230,0,26,0.45)]'
-          : isEsports
-          ? 'border-orange-500/25 hover:border-orange-400/70 hover:shadow-[0_16px_40px_-12px_rgba(249,115,22,0.4)]'
           : 'border-amber-500/20 hover:border-amber-400/60 hover:shadow-[0_16px_40px_-12px_rgba(245,158,11,0.35)]'
       }`}
     >
@@ -80,8 +74,6 @@ function EventShowcaseCard({
             className={`flex h-11 w-11 items-center justify-center rounded-xl border transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${
               isTechnical
                 ? 'border-red-500/30 bg-red-500/15 text-red-300'
-                : isEsports
-                ? 'border-orange-500/30 bg-orange-500/15 text-orange-300'
                 : 'border-amber-500/30 bg-amber-500/15 text-amber-300'
             }`}
           >
@@ -90,10 +82,8 @@ function EventShowcaseCard({
           <span
             className={`rounded-full border px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider ${
               isTechnical
-                ? 'border-red-500/30 bg-red-500/10 text-red-200'
-                : isEsports
-                ? 'border-orange-500/30 bg-orange-500/10 text-orange-200'
-                : 'border-amber-500/30 bg-amber-500/10 text-amber-200'
+                ? 'bg-red-500/10 text-red-200 border-red-500/20'
+                : 'bg-amber-500/10 text-amber-200 border-amber-500/20'
             }`}
           >
             {CATEGORY_LABEL[event.category]}
@@ -139,20 +129,87 @@ function EventShowcaseCard({
   );
 }
 
+function SwappingCardGrid({ events, onOpen }: { events: EventItem[]; onOpen: (event: EventItem) => void }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const next = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % events.length);
+  }, [events.length]);
+
+  useEffect(() => {
+    if (events.length <= 1) return;
+    const timer = setInterval(next, 4000);
+    return () => clearInterval(timer);
+  }, [events.length, next]);
+
+  const total = events.length;
+  const visible = events.slice(0, 5);
+
+  return (
+    <div className="relative flex justify-center items-center h-[420px] sm:h-[460px]">
+      <AnimatePresence initial={false} custom={currentIndex}>
+        {visible.map((event, idx) => {
+          let offset = idx - currentIndex;
+          if (offset > total / 2) offset -= total;
+          if (offset < -total / 2) offset += total;
+
+          const absOffset = Math.abs(offset);
+          const zIndex = total - absOffset;
+          const x = offset * 260;
+          const rotateY = offset * -8;
+          const opacity = absOffset === 0 ? 1 : absOffset === 1 ? 0.75 : 0.5;
+          const scale = absOffset === 0 ? 1 : 0.9;
+
+          return (
+            <motion.div
+              key={event.id}
+              className="absolute w-[85vw] max-w-sm sm:max-w-md"
+              style={{ zIndex }}
+              animate={{ x, rotateY, opacity, scale }}
+              transition={{
+                type: 'spring',
+                stiffness: 260,
+                damping: 22,
+                mass: 0.8,
+              }}
+            >
+              <EventShowcaseCard event={event} index={idx} onOpen={onOpen} />
+            </motion.div>
+          );
+        })}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 function EventSection({
   title,
   countLabel,
   events,
-  gridClass,
   onOpen,
+  useSwapping = false,
 }: {
   title: string;
   countLabel: string;
   events: EventItem[];
-  gridClass: string;
   onOpen: (event: EventItem) => void;
+  useSwapping?: boolean;
 }) {
   if (events.length === 0) return null;
+
+  if (useSwapping) {
+    return (
+      <div className="space-y-6">
+        <div className="text-center">
+          <h3 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{title}</h3>
+          <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-orange-200">
+            {countLabel}
+          </p>
+        </div>
+        <SwappingCardGrid events={events} onOpen={onOpen} />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -164,7 +221,7 @@ function EventSection({
           </p>
         </div>
       </div>
-      <div className={gridClass}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {events.map((event, index) => (
           <EventShowcaseCard key={event.id} event={event} index={index} onOpen={onOpen} />
         ))}
@@ -174,7 +231,7 @@ function EventSection({
 }
 
 export default function EventExplorer() {
-  const [selectedCategory, setSelectedCategory] = useState<'all' | 'technical' | 'non-technical' | 'e-sports'>('all');
+  const [selectedCategory, setSelectedCategory] = useState<'all' | 'technical' | 'non-technical'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
 
@@ -183,7 +240,6 @@ export default function EventExplorer() {
       let matchesCat = true;
       if (selectedCategory === 'technical') matchesCat = event.category === 'technical';
       if (selectedCategory === 'non-technical') matchesCat = event.category === 'non-technical';
-      if (selectedCategory === 'e-sports') matchesCat = event.category === 'e-sports';
 
       const q = searchQuery.toLowerCase().trim();
       if (!q) return matchesCat;
@@ -199,7 +255,6 @@ export default function EventExplorer() {
 
   const technicalEvents = filteredEvents.filter((e) => e.category === 'technical');
   const nonTechnicalEvents = filteredEvents.filter((e) => e.category === 'non-technical');
-  const esportsEvents = filteredEvents.filter((e) => e.category === 'e-sports');
 
   return (
     <div id="events" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -209,13 +264,13 @@ export default function EventExplorer() {
       <div className="text-center max-w-3xl mx-auto mb-12">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-mono text-red-300 mb-4">
           <Flame className="w-3.5 h-3.5 text-orange-400" />
-          <span>11 ARENAS • ₹150 SOLO · ₹300 TEAM (2–3)</span>
+          <span>11 ARENAS · ₹150 SOLO · ₹300 TEAM (2–3)</span>
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
           Explore All <span className="text-gradient">AETHERION Events</span>
         </h2>
         <p className="text-slate-200 text-sm sm:text-base mt-3 leading-relaxed">
-          Four technical arenas, five non-technical challenges, and two e-sports titles — all included. ₹150 for one person, ₹300 for a team of 2–3.
+          Five technical events and five non-technical events across 11 live arenas. ₹150 for one person, ₹300 for a team of 2–3.
         </p>
       </div>
 
@@ -225,7 +280,6 @@ export default function EventExplorer() {
             { id: 'all', label: 'All Tracks' },
             { id: 'technical', label: 'Technical' },
             { id: 'non-technical', label: 'Non-Technical' },
-            { id: 'e-sports', label: 'E-Sports' },
           ].map((cat) => (
             <button
               key={cat.id}
@@ -242,7 +296,7 @@ export default function EventExplorer() {
         </div>
 
         <div className="relative w-full md:w-72">
-          <Search className="w-4 h-4 text-slate-300 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-slate-300 absolute left-3.5 top-1/2 -translate-x-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchQuery}
@@ -253,7 +307,7 @@ export default function EventExplorer() {
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-300 hover:text-white"
+              className="absolute right-3 top-1/2 -translate-x-1/2 text-xs text-slate-300 hover:text-white"
             >
               Clear
             </button>
@@ -267,21 +321,14 @@ export default function EventExplorer() {
             title="Technical Events"
             countLabel={`${technicalEvents.length} events`}
             events={technicalEvents}
-            gridClass="grid grid-cols-1 md:grid-cols-2 gap-6"
+            useSwapping
             onOpen={setSelectedEvent}
           />
           <EventSection
             title="Non-Technical Events"
             countLabel={`${nonTechnicalEvents.length} events`}
             events={nonTechnicalEvents}
-            gridClass="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            onOpen={setSelectedEvent}
-          />
-          <EventSection
-            title="E-Sports"
-            countLabel={`${esportsEvents.length} events`}
-            events={esportsEvents}
-            gridClass="grid grid-cols-1 md:grid-cols-2 gap-6 md:max-w-4xl"
+            useSwapping
             onOpen={setSelectedEvent}
           />
         </div>

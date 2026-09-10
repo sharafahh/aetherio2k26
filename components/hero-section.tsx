@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, MapPin, Ticket } from 'lucide-react';
 import { GOOGLE_FORM_REGISTRATION_URL, SYMPOSIUM_METADATA } from '@/lib/data/events';
+import CountdownTimer from './countdown-timer';
 
 export default function HeroSection() {
   return (
@@ -33,30 +34,13 @@ export default function HeroSection() {
           </span>
         </motion.h1>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.16 }}
-          className="mt-5 max-w-3xl text-2xl font-black leading-tight tracking-tight text-white drop-shadow-[0_3px_16px_rgba(0,0,0,0.95)] sm:text-4xl md:text-5xl"
-        >
-          Where Power Meets
-          <br />
-          <span className="text-fire-red">
-            Limitless Intelligence
-          </span>
-        </motion.h2>
-
         <motion.p
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.24 }}
-          className="mt-6 max-w-[820px] text-sm leading-relaxed text-slate-100 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] sm:text-base md:text-lg"
+          transition={{ duration: 0.55, delay: 0.16 }}
+          className="mt-5 max-w-2xl text-lg font-semibold leading-snug text-white drop-shadow-[0_3px_16px_rgba(0,0,0,0.95)] sm:text-xl md:text-2xl"
         >
-          Proudly presented by <strong className="text-fire-red">AMSphere</strong>,{' '}
-          <strong className="text-fire-red">AETHERION&apos;26</strong> is a national-scale flagship symposium
-          for engineers, creators, competitive coders, and gamers. One pass covers every arena — technical
-          tracks, non-technical challenges, and e-sports — guided by{' '}
-          <span className="font-semibold text-fire-red">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</span>.
+          AETHERION&apos;26 — Where innovation, creativity and competition collide.
         </motion.p>
 
         <motion.div
@@ -65,19 +49,20 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-7 flex flex-col items-center text-center"
         >
-          <p className="text-3xl font-black tracking-tight text-white drop-shadow-[0_3px_16px_rgba(0,0,0,0.95)] sm:text-5xl md:text-6xl">
-            12th September 2026
-          </p>
-          <a
-            href={SYMPOSIUM_METADATA.venueMapUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-slate-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] hover:text-[#ff1a00] sm:text-base"
-            title="Open AMS College of Engineering on Google Maps"
-          >
-            <MapPin className="h-4 w-4 text-[#ff1a00]" />
-            {SYMPOSIUM_METADATA.venue}
-          </a>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm sm:text-base">
+            <CountdownTimer targetDate="2026-09-12T09:30:00" />
+            <span className="hidden sm:inline text-red-500">|</span>
+            <a
+              href={SYMPOSIUM_METADATA.venueMapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-slate-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] hover:text-[#ff1a00] transition-colors"
+              title="Open AMS College of Engineering on Google Maps"
+            >
+              <MapPin className="h-4 w-4 text-[#ff1a00]" />
+              <span>{SYMPOSIUM_METADATA.venue}</span>
+            </a>
+          </div>
         </motion.div>
 
         <motion.div
@@ -91,7 +76,7 @@ export default function HeroSection() {
             <div className="relative flex flex-col items-center">
               <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-[#ff2a00]">
                 <Ticket className="h-3.5 w-3.5" />
-                Entry Pass
+                Entry Fee
               </span>
               <div className="mt-3 grid w-full grid-cols-2 gap-3">
                 <div className="flex flex-col items-center rounded-xl border border-white/10 bg-black/30 px-2 py-2.5">
@@ -99,7 +84,7 @@ export default function HeroSection() {
                     ₹150
                   </span>
                   <span className="mt-1 text-[10px] font-bold uppercase tracking-widest text-slate-200">
-                    One person
+                    per person
                   </span>
                 </div>
                 <div className="flex flex-col items-center rounded-xl border border-white/10 bg-black/30 px-2 py-2.5">
@@ -107,16 +92,10 @@ export default function HeroSection() {
                     ₹300
                   </span>
                   <span className="mt-1 text-[10px] font-bold uppercase tracking-widest text-slate-200">
-                    Team of 2–3
+                    team of 2–3
                   </span>
                 </div>
               </div>
-              <span className="mt-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[#ff1a00]">
-                Technical Events
-              </span>
-              <span className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-slate-200">
-                + Non-Tech &amp; E-Sports included
-              </span>
             </div>
           </div>
         </motion.div>

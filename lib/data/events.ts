@@ -75,10 +75,9 @@ export const SYMPOSIUM_METADATA = {
   email: "contact@aetherion26.org",
   pricingOffer: PRICING_DETAIL,
   stats: [
-    { label: "Technical Events", value: "4", prefix: "" },
+    { label: "Technical Events", value: "5", prefix: "" },
     { label: "Non-Technical Events", value: "5", prefix: "" },
-    { label: "E-Sports Events", value: "2", prefix: "" },
-    { label: "Solo / Team Pass", value: PRICING_SHORT, prefix: "" },
+    { label: "Live Arenas", value: "11", prefix: "" },
   ]
 };
 export const EVENTS_DATA: EventItem[] = [
@@ -130,7 +129,7 @@ export const EVENTS_DATA: EventItem[] = [
     id: 'black-box',
     slug: 'black-box',
     title: 'AI ESCAPE ROOM',
-    category: 'non-technical',
+    category: 'technical',
     tagline: 'Team-based AI puzzle-solving experience',
     shortDesc: 'Solve AI-based puzzles, clues, and challenges to escape before the allotted time expires.',
     fullDesc: 'AI Escape Room is a thrilling team-based AI puzzle-solving experience. Work together to solve AI-based puzzles, clues, and challenges to escape. Complete the challenge before the allotted time expires.',
@@ -311,7 +310,7 @@ export const EVENTS_DATA: EventItem[] = [
     id: 'e-sports',
     slug: 'e-sports',
     title: 'FREE FIRE TOURNAMENT',
-    category: 'e-sports',
+    category: 'non-technical',
     subCategory: 'Gaming',
     tagline: 'Battle Royale Qualifier → Clash Squad Final',
     shortDesc: 'The top two teams from the Battle Royale points table qualify for the Clash Squad Final.',
@@ -527,7 +526,7 @@ export const EVENTS_DATA: EventItem[] = [
     id: 'e-football',
     slug: 'e-football',
     title: 'E-FOOTBALL',
-    category: 'e-sports',
+    category: 'non-technical',
     subCategory: 'Gaming',
     tagline: 'Knockout Tournament',
     shortDesc: 'E-Football esports tournament featuring a knockout format with Dream Teams.',
