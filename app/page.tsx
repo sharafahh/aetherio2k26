@@ -51,14 +51,6 @@ export default function HomePage() {
             A national battleground for <span className="text-gradient">engineers &amp; creators</span>
           </h2>
 
-          <p className="max-w-[820px] text-slate-200 text-sm sm:text-base leading-relaxed">
-            Proudly presented by <strong className="text-red-300">AMSphere</strong>, <strong>AETHERION&apos;26</strong> is a national-scale flagship symposium crafted as a premier battleground for ambitious engineers, digital creators, competitive coders, gamers, and athletic minds.
-          </p>
-
-          <p className="max-w-[820px] text-slate-200 text-xs sm:text-sm leading-relaxed">
-            Guided by the spirit of the dragon — <strong className="text-white font-mono">POWER • INNOVATION • COMPETITION • CREATIVITY • FUTURE</strong> — the symposium offers high-stakes technical tracks and non-technical arenas under one pass: <strong className="text-red-300">₹150 for one person, ₹300 for a team of 2–3</strong>.
-          </p>
-
           {/* Glassmorphism Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8">
             <div className="p-5 rounded-2xl bg-surface/80 border border-border backdrop-blur-xl flex flex-col items-center text-center space-y-2">
@@ -74,8 +66,8 @@ export default function HomePage() {
               <span className="text-xs font-semibold uppercase tracking-wider text-slate-300">Total Events</span>
             </div>
             <div className="p-5 rounded-2xl bg-surface/80 border border-border backdrop-blur-xl flex flex-col items-center text-center space-y-2">
-              <span className="text-lg font-black font-mono text-white">₹150 / ₹300</span>
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-300">Solo / Team Pass</span>
+              <span className="text-lg font-black font-mono text-white">₹150 solo · ₹300 team</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-300">Entry Fee</span>
             </div>
           </div>
         </div>
