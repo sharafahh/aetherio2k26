@@ -321,8 +321,6 @@ export const EVENTS_DATA: EventItem[] = [
     teamSize: 'Squad (4 Players)',
     prizes: {
       first: '₹1,000',
-      second: '₹500',
-      overall: '₹1,500',
     },
     coordinators: [
       { name: 'Mohamed Shafiq', year: '4th Year', role: 'Student Coordinator', phone: '8825514094' },
@@ -360,8 +358,6 @@ export const EVENTS_DATA: EventItem[] = [
     teamSize: '2 Members',
     prizes: {
       first: '₹1,000',
-      second: '₹500',
-      overall: '₹1,500',
     },
     coordinators: [
       { name: 'Mohamed Abdul Faazil A', year: '4th Year', role: 'Student Coordinator', phone: '9445328586' },
@@ -404,8 +400,6 @@ export const EVENTS_DATA: EventItem[] = [
     teamSize: 'Teams/Pairs',
     prizes: {
       first: '₹1,000',
-      second: '₹500',
-      overall: '₹1,500',
     },
     coordinators: [
       { name: 'Divya K', year: '4th Year', role: 'Student Coordinator', phone: '9941902579' },
@@ -446,8 +440,6 @@ export const EVENTS_DATA: EventItem[] = [
     teamSize: '2-4 Members',
     prizes: {
       first: '₹1,000',
-      second: '₹500',
-      overall: '₹1,500',
     },
     coordinators: [
       { name: 'Afraa K.S', year: '4th Year', role: 'Student Coordinator', phone: '9003163977' },
@@ -489,8 +481,6 @@ export const EVENTS_DATA: EventItem[] = [
     teamSize: '2 Members',
     prizes: {
       first: '₹1,000',
-      second: '₹500',
-      overall: '₹1,500',
     },
     coordinators: [
       { name: 'TheanMercy M', year: '4th Year', role: 'Student Coordinator', phone: '9445072534' },
@@ -537,8 +527,6 @@ export const EVENTS_DATA: EventItem[] = [
     teamSize: 'Solo (1 Player)',
     prizes: {
       first: '₹1,000',
-      second: '₹500',
-      overall: '₹1,500',
     },
     coordinators: [
       { name: 'Mohamed Aarif Buhary', year: '4th Year', role: 'Student Coordinator', phone: '9486746138' },
