@@ -93,7 +93,7 @@ export const EVENTS_DATA: EventItem[] = [
     fullDesc: 'NEURAL QUEST is a 4-round event testing your AI knowledge, observation, and creativity. From identifying AI slides to quick-fire MCQs, spotting AI-generated images, and crafting the best tech prompts, this event will push your boundaries. Think smart. Spot the AI. Prompt like a pro. The team with the highest score wins NEURAL QUEST!!!',
     date: 'Sept 12, 2026',
     time: '11:00 AM - 11:45 AM',
-    venue: 'Tech Hall 1',
+    venue: 'AI&DS Lab – Bay 1',
     fee: 100,
     teamSize: '2 Members',
     prizes: {
@@ -136,7 +136,7 @@ export const EVENTS_DATA: EventItem[] = [
     fullDesc: 'AI Escape Room is a thrilling team-based AI puzzle-solving experience. Work together to solve AI-based puzzles, clues, and challenges to escape. Complete the challenge before the allotted time expires.',
     date: 'Sept 12, 2026',
     time: '12:00 PM - 12:45 PM',
-    venue: 'Computing Hub A',
+    venue: 'Room No. S204',
     fee: 100,
     teamSize: '2-3 Members',
     prizes: {
@@ -181,7 +181,7 @@ export const EVENTS_DATA: EventItem[] = [
     fullDesc: 'PPT (Paper Presentation)\n\nRules and Regulations:\n• The presentation should be based on one of the provided subjects.\n• Participants should be prepared and thorough with their chosen subject.\n\nTopics:\n1. The Future of Humans and AI\n2. The Hidden AI Around Us\n3. AI Powered Medical Diagnosis\n4. The Rise of Intelligence Machines\n5. Neural Revolution',
     date: 'Sept 12, 2026',
     time: '11:00 AM - 11:45 AM',
-    venue: 'Conference Auditorium',
+    venue: 'AI&DS Lab – Bay 2',
     fee: 150,
     teamSize: '1-3 Members',
     prizes: {
@@ -223,7 +223,7 @@ export const EVENTS_DATA: EventItem[] = [
     fullDesc: 'Team Size: 2–4 Members\n\nObjective:\nParticipants receive a problem statement and must create the best frontend website using AI tools within the given time limit.\n\nTime Limit: 20 Minutes\n\nFocus:\nAI-powered frontend development, creativity, UI design, problem solving and speed.',
     date: 'Sept 12, 2026',
     time: '12:00 PM - 12:45 PM',
-    venue: 'Design Studio Lab',
+    venue: 'AI&DS Lab – Bay 1',
     fee: 100,
     teamSize: '2-4 Members',
     prizes: {
@@ -271,7 +271,7 @@ export const EVENTS_DATA: EventItem[] = [
     fullDesc: 'Individual Format: Each participant competes individually.\n\nParticipants will receive a program containing intentional errors. Participants must fix as many errors as possible within the given time.\n\nNo internet, AI tools, or external assistance allowed.\n\nFIND THE BUG:\nIdentify syntax, spelling, capitalization, brackets, and keyword errors. Carefully inspect the given code and locate the bugs.\n\nFIX THE CODE:\nCorrect the identified errors without changing the intended program. Speed and accuracy will determine the score.\n\nWINNER:\nThe participant who fixes the most errors in the shortest time will be declared the winner.\n\n“One Code. Many Bugs. One Winner!”',
     date: 'Sept 12, 2026',
     time: '12:00 PM - 12:45 PM',
-    venue: 'Computing Lab B',
+    venue: 'AI&DS Lab – Bay 2',
     fee: 100,
     teamSize: 'Solo (1 Player)',
     prizes: {
@@ -310,7 +310,7 @@ export const EVENTS_DATA: EventItem[] = [
   {
     id: 'e-sports',
     slug: 'e-sports',
-    title: 'FREE FIRE TOURNAMENT',
+    title: 'SPORTS FRENZY – E-SPORTS / FREE FIRE',
     category: 'non-technical',
     subCategory: 'Gaming',
     tagline: 'Battle Royale Qualifier → Clash Squad Final',
@@ -318,7 +318,7 @@ export const EVENTS_DATA: EventItem[] = [
     fullDesc: 'Tournament Format:\nBattle Royale Qualifier → Clash Squad Final\n\nQualification:\nThe top two teams from the Battle Royale points table qualify for the Clash Squad Final.\n\nScoring:\n\n| Achievement | Points |\n| ----------- | --------: |\n| Each Kill | 5 Points |\n| Booyah | 10 Points |\n\nThe team winning the Clash Squad Final will be declared the Tournament Winner.',
     date: 'Sept 12, 2026',
     time: '01:30 PM - 03:30 PM',
-    venue: 'E-Sports Arena / Hall B',
+    venue: 'Room No. S206',
     fee: 150,
     teamSize: 'Squad (4 Players)',
     prizes: {
@@ -357,7 +357,7 @@ export const EVENTS_DATA: EventItem[] = [
     fullDesc: 'Team Format: 2 Members\n\nTotal Rounds: 4\n\nSpecial Rule: Round 3 is the elimination round.\n\nFilm Hunt is a movie and music-based challenge testing participants\' knowledge of:\n* Movie background music\n* Songs\n* Movie connections\n* Lyrics\n* Actors\n* Famous dialogues\n\nNo mobile phones or internet access are permitted during the rounds.\nTeams must answer only when the host gives permission.',
     date: 'Sept 12, 2026',
     time: '01:30 PM - 02:15 PM',
-    venue: 'Campus Quad & Media Lab',
+    venue: 'Room No. S205',
     fee: 100,
     teamSize: '2 Members',
     prizes: {
@@ -401,7 +401,7 @@ export const EVENTS_DATA: EventItem[] = [
     fullDesc: 'Team Format: Teams/Pairs\n\nRoles:\n* One participant is the Speaker.\n* One participant is the Guesser.\n\nObjective:\nThe Guesser must identify words by watching the Speaker\'s lips while wearing headphones with loud music.\n\nScoring:\nEvery correctly guessed word = 1 point.\n\nWinner:\nThe team with the highest score wins.',
     date: 'Sept 12, 2026',
     time: '02:20 PM - 03:00 PM',
-    venue: 'Acoustic Stage / Open Amphitheatre',
+    venue: 'Room No. S203',
     fee: 80,
     teamSize: 'Teams/Pairs',
     prizes: {
@@ -443,7 +443,7 @@ export const EVENTS_DATA: EventItem[] = [
     fullDesc: 'Team Format: Each team consists of 2–4 members.\n\nThe event consists of 2 creative challenges. Participants must switch roles as instructed.\n\nCHALLENGE 1 — SWITCH-A-SKETCH:\nTwo participants create a single drawing together. Every 5 minutes, they must switch turns and continue the same artwork.\n\nCHALLENGE 2 — TOUCH & FEEL:\nOne participant is blindfolded and identifies an object through touch. Give an indirect clue and let the teammate guess the object.\n\nWINNER:\nTeams will be judged on creativity, communication, teamwork, observation, and adaptability.\n\n“Switch Your Role. Change Your Perspective”',
     date: 'Sept 12, 2026',
     time: '03:10 PM - 04:00 PM',
-    venue: 'Design Studio & Creative Hub',
+    venue: 'Room No. S203',
     fee: 100,
     teamSize: '2-4 Members',
     prizes: {
@@ -479,14 +479,14 @@ export const EVENTS_DATA: EventItem[] = [
   {
     id: 'wrong-answers-only',
     slug: 'wrong-answers-only',
-    title: 'WRONG ANSWERS ONLY',
+    title: 'HUNGRY ANSWERS ONLY',
     category: 'non-technical',
     tagline: 'Think Wrong. Answer Fast. Don\'t Be Correct!',
     shortDesc: 'Team Format: 2 participants. Features 3 fun-filled rounds where participants must give only wrong or funny answers. Giving the correct answer leads to elimination.',
     fullDesc: 'Team Format: Each team consists of 2 participants.\n\nThe event consists of 3 fun-filled rounds. Participants must give only wrong or funny answers. Giving the correct answer results in elimination.\n\nROUND 1 — QUICK WRONG:\nEasy and general questions will be asked. Give an immediate and funny wrong answer.\n\nROUND 2 — TRICKY WRONG:\nQuestions become faster and more confusing. Avoid automatically giving the correct answer.\n\nROUND 3 — WRONG ANSWER BATTLE:\nFinal teams face rapid-fire questions. Answer within a few seconds. One correct answer can eliminate you.\n\nWINNER:\nThe team with the most creative, funniest, and consistently wrong answers wins.\n\n“Think Wrong. Answer Fast. Don\'t Be Correct!”',
     date: 'Sept 12, 2026',
     time: '03:10 PM - 04:00 PM',
-    venue: 'Open Amphitheatre',
+    venue: 'Room No. S204',
     fee: 80,
     teamSize: '2 Members',
     prizes: {
@@ -526,7 +526,7 @@ export const EVENTS_DATA: EventItem[] = [
   {
     id: 'e-football',
     slug: 'e-football',
-    title: 'E-FOOTBALL',
+    title: 'SPORTS FRENZY – E-SPORTS / E-FOOTBALL',
     category: 'non-technical',
     subCategory: 'Gaming',
     tagline: 'Knockout Tournament',
@@ -534,7 +534,7 @@ export const EVENTS_DATA: EventItem[] = [
     fullDesc: 'Match Settings:\n\n* 🎮 Game: E-Football\n* 🏆 Match Type: Knockout\n* 👥 Team Type: Dream Team\n* ⏱️ Match Time: 8 Minutes\n* 🩹 Injuries: ON\n* ⚡ Extra Time: OFF\n* 🎯 Penalty: ON\n* 🎲 Condition: Random\n* 🔄 Substitution: Default',
     date: 'Sept 12, 2026',
     time: '01:30 PM - 03:30 PM',
-    venue: 'E-Sports Arena / Hall B',
+    venue: 'Room No. S201',
     fee: 150,
     teamSize: 'Solo (1 Player)',
     prizes: {
@@ -587,18 +587,22 @@ export const TIMELINE_SCHEDULE = [
     day: "Day 1",
     label: "Symposium Itinerary",
     items: [
-      { time: "10:30 AM", title: "Name Reveal", venue: "Main Auditorium", category: "Special" },
-      { time: "11:00 AM - 11:45 AM", title: "Neural Quest", venue: "Tech Hall 1", category: "Technical" },
-      { time: "11:00 AM - 11:45 AM", title: "PPT (Paper Presentation)", venue: "Conference Auditorium", category: "Technical" },
-      { time: "12:00 PM - 12:45 PM", title: "AI Escape Room: Reverse Engineering Contest", venue: "Computing Hub A", category: "Technical" },
-      { time: "12:00 PM - 12:45 PM", title: "UI/UX Designathon: High-Fidelity Sprint", venue: "Design Studio Lab", category: "Technical" },
-      { time: "12:00 PM - 12:45 PM", title: "Reverse Engineering (Code Debugging)", venue: "Computing Lab B", category: "Technical" },
-      { time: "12:45 PM - 01:30 PM", title: "Lunch Break", venue: "Dining Pavilion", category: "General" },
-      { time: "01:30 PM - 02:15 PM", title: "Film Hunt: Mystery Clue Trail", venue: "Campus Quad & Media Lab", category: "Non-Technical" },
-      { time: "01:30 PM - 03:30 PM", title: "E-Sports: Free Fire & E-Football Tournaments", venue: "E-Sports Arena", category: "Non-Technical" },
-      { time: "02:20 PM - 03:00 PM", title: "Voice & Noise Auditory & Foley Showdown", venue: "Acoustic Stage", category: "Non-Technical" },
-      { time: "03:10 PM - 04:00 PM", title: "Creative Quest", venue: "Design Studio & Creative Hub", category: "Non-Technical" },
-      { time: "03:10 PM - 04:00 PM", title: "Wrong Answers Only", venue: "Open Amphitheatre", category: "Non-Technical" },
+      { time: "09:30 AM - 10:30 AM", title: "Inauguration", venue: "Arch. Auditorium", category: "General" },
+      { time: "10:30 AM", title: "Banner Reveal", venue: "—", category: "Special" },
+      { time: "11:00 AM - 11:45 AM", title: "Neural Quest", venue: "AI&DS Lab – Bay 1", category: "Technical" },
+      { time: "11:00 AM - 11:45 AM", title: "PPT", venue: "AI&DS Lab – Bay 2", category: "Technical" },
+      { time: "11:45 AM - 12:00 PM", title: "Break", venue: "—", category: "General" },
+      { time: "12:00 PM - 12:45 PM", title: "AI Web Sprint", venue: "AI&DS Lab – Bay 1", category: "Technical" },
+      { time: "12:00 PM - 12:45 PM", title: "Code Debugging", venue: "AI&DS Lab – Bay 2", category: "Technical" },
+      { time: "12:00 PM - 12:45 PM", title: "AI Escape Room", venue: "Room No. S204", category: "Technical" },
+      { time: "12:45 PM - 01:30 PM", title: "Lunch Break", venue: "—", category: "General" },
+      { time: "01:30 PM - 02:15 PM", title: "Film Hunt", venue: "Room No. S205", category: "Non-Technical" },
+      { time: "01:30 PM - 03:30 PM", title: "Sports Frenzy – E-Sports / Free Fire", venue: "Room No. S206", category: "Non-Technical" },
+      { time: "01:30 PM - 03:30 PM", title: "Sports Frenzy – E-Sports / E-Football", venue: "Room No. S201", category: "Non-Technical" },
+      { time: "02:20 PM - 03:00 PM", title: "Voice & Noise", venue: "Room No. S203", category: "Non-Technical" },
+      { time: "03:10 PM - 04:00 PM", title: "Creative Quest", venue: "Room No. S203", category: "Non-Technical" },
+      { time: "03:10 PM - 04:00 PM", title: "Hungry Answers Only", venue: "Room No. S204", category: "Non-Technical" },
+      { time: "04:00 PM - 04:30 PM", title: "Certificate Distribution", venue: "AI&DS Lab", category: "General" },
     ]
   }
 ];
