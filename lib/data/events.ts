@@ -109,7 +109,7 @@ export const EVENTS_DATA: EventItem[] = [
       '2 members per team.',
       'Fastest answer = higher score.',
       'No external AI tools or browsing allowed.',
-      'Round 3: Lowest-scoring team gets eliminated.',
+      'Lowest-scoring team gets eliminated.',
       'Think fast. Answer smart.',
     ],
     rounds: [
@@ -285,16 +285,14 @@ export const EVENTS_DATA: EventItem[] = [
       { name: 'Mrs. Kiruthiga R', year: 'Faculty', role: 'Asst. Professor' },
     ],
     rules: [
-      'Individual format: each participant competes individually.',
-      'No internet, AI tools, or external assistance allowed.',
-      'Round 1 – Bug Buster: MCQs on C basics — syntax, operators, loops, conditionals.',
+      'Round 1 – Bug Buster: MCQ round on C basics — syntax, operators, loops, conditionals.',
       'Round 2 – Code Scramble: Rearrange shuffled code lines into the correct working order.',
-      'Round 3 – Final – Debug & Execute: Fix syntax errors in Python code and give the exact output.',
+      'Round 3 (Final) – Debug & Execute: Fix syntax errors in Python code and give the exact output.',
     ],
     rounds: [
-      { title: 'ROUND 1 — BUG BUSTER', desc: 'MCQs on C basics — syntax, operators, loops, conditionals.' },
+      { title: 'ROUND 1 — BUG BUSTER', desc: 'MCQ round on C basics — syntax, operators, loops, conditionals.' },
       { title: 'ROUND 2 — CODE SCRAMBLE', desc: 'Rearrange shuffled code lines into the correct working order.' },
-      { title: 'ROUND 3 — FINAL – DEBUG & EXECUTE', desc: 'Fix syntax errors in Python code and give the exact output.' },
+      { title: 'ROUND 3 (FINAL) — DEBUG & EXECUTE', desc: 'Fix syntax errors in Python code and give the exact output.' },
     ],
     judgingCriteria: [
       'Number of syntax, spelling, capitalization, bracket, and keyword errors fixed',
