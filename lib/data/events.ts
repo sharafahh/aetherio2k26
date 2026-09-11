@@ -310,7 +310,7 @@ export const EVENTS_DATA: EventItem[] = [
   {
     id: 'e-sports',
     slug: 'e-sports',
-    title: 'SPORTS FRENZY – E-SPORTS / FREE FIRE',
+    title: 'E-SPORTS / FREE FIRE',
     category: 'non-technical',
     subCategory: 'Gaming',
     tagline: 'Battle Royale Qualifier → Clash Squad Final',
@@ -479,7 +479,7 @@ export const EVENTS_DATA: EventItem[] = [
   {
     id: 'wrong-answers-only',
     slug: 'wrong-answers-only',
-    title: 'HUNGRY ANSWERS ONLY',
+    title: 'WRONG ANSWERS ONLY',
     category: 'non-technical',
     tagline: 'Think Wrong. Answer Fast. Don\'t Be Correct!',
     shortDesc: 'Team Format: 2 participants. Features 3 fun-filled rounds where participants must give only wrong or funny answers. Giving the correct answer leads to elimination.',
@@ -526,7 +526,7 @@ export const EVENTS_DATA: EventItem[] = [
   {
     id: 'e-football',
     slug: 'e-football',
-    title: 'SPORTS FRENZY – E-SPORTS / E-FOOTBALL',
+    title: 'E-SPORTS / FOOTBALL',
     category: 'non-technical',
     subCategory: 'Gaming',
     tagline: 'Knockout Tournament',
@@ -597,11 +597,11 @@ export const TIMELINE_SCHEDULE = [
       { time: "12:00 PM - 12:45 PM", title: "AI Escape Room", venue: "Room No. S204", category: "Technical" },
       { time: "12:45 PM - 01:30 PM", title: "Lunch Break", venue: "—", category: "General" },
       { time: "01:30 PM - 02:15 PM", title: "Film Hunt", venue: "Room No. S205", category: "Non-Technical" },
-      { time: "01:30 PM - 03:30 PM", title: "Sports Frenzy – E-Sports / Free Fire", venue: "Room No. S206", category: "Non-Technical" },
-      { time: "01:30 PM - 03:30 PM", title: "Sports Frenzy – E-Sports / E-Football", venue: "Room No. S201", category: "Non-Technical" },
+      { time: "01:30 PM - 03:30 PM", title: "E-Sports / Free Fire", venue: "Room No. S206", category: "Non-Technical" },
+      { time: "01:30 PM - 03:30 PM", title: "E-Sports / Football", venue: "Room No. S201", category: "Non-Technical" },
       { time: "02:20 PM - 03:00 PM", title: "Voice & Noise", venue: "Room No. S203", category: "Non-Technical" },
       { time: "03:10 PM - 04:00 PM", title: "Creative Quest", venue: "Room No. S203", category: "Non-Technical" },
-      { time: "03:10 PM - 04:00 PM", title: "Hungry Answers Only", venue: "Room No. S204", category: "Non-Technical" },
+      { time: "03:10 PM - 04:00 PM", title: "Wrong Answers Only", venue: "Room No. S204", category: "Non-Technical" },
       { time: "04:00 PM - 04:30 PM", title: "Certificate Distribution", venue: "AI&DS Lab", category: "General" },
     ]
   }
