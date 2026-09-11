@@ -61,17 +61,31 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
     );
   }
 
+  const pad = (n: number) => String(n).padStart(2, '0');
+
   const isEventStarted = timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0;
 
   if (isEventStarted) {
     return (
-      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-red-600/20 border border-red-500/40 text-red-300 font-mono font-bold text-sm">
-        <span className="animate-pulse">AETHERION'26 IS LIVE</span>
+      <div className="inline-flex items-center gap-2 sm:gap-3 text-white font-mono">
+        <span className="text-xs font-bold uppercase tracking-wider text-green-400">Live</span>
+        <span className="text-green-500">|</span>
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <span className="text-lg sm:text-xl font-black">00</span>
+          <span className="text-[10px] text-green-300 uppercase">Days</span>
+          <span className="text-green-500">:</span>
+          <span className="text-lg sm:text-xl font-black">00</span>
+          <span className="text-[10px] text-green-300 uppercase">Hrs</span>
+          <span className="text-green-500">:</span>
+          <span className="text-lg sm:text-xl font-black">00</span>
+          <span className="text-[10px] text-green-300 uppercase">Min</span>
+          <span className="text-green-500">:</span>
+          <span className="text-lg sm:text-xl font-black">00</span>
+          <span className="text-[10px] text-green-300 uppercase">Sec</span>
+        </div>
       </div>
     );
   }
-
-  const pad = (n: number) => String(n).padStart(2, '0');
 
   return (
     <div className="inline-flex items-center gap-2 sm:gap-3 text-white font-mono">

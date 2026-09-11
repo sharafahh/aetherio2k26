@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Flame, Phone, MessageCircle } from 'lucide-react';
+import { Flame, Phone, Instagram } from 'lucide-react';
 
 const COORDINATORS = [
   { name: 'Ahamed Multhazim. A', phone: '9600244885', href: 'tel:+919600244885', wa: 'https://wa.me/919600244885' },
@@ -63,10 +63,10 @@ export default function ContactSection() {
           href="https://www.instagram.com/aetherion_2k26_?stkn=azAzMWRlbzR0bzIx"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface border border-border text-sm font-semibold text-white hover:border-red-500/40 transition-colors"
+          className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-surface border border-border text-base font-bold text-white hover:border-red-500/40 transition-colors"
         >
-          <MessageCircle className="w-4 h-4 text-pink-400" />
-          @aetherion_2k26_
+          <Instagram className="w-6 h-6 text-pink-400" />
+          <span className="text-lg">@aetherion_2k26_</span>
         </a>
       </div>
     </section>
